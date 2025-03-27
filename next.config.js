@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: false,
   sassOptions: {
     silenceDeprecations: ["legacy-js-api"],
-  }
-}
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

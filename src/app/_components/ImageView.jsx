@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
-import useClickOutside from "@common/useClickOutside";
-import Image from 'next/image';
+import useClickOutside from "@/src/app/_common/useClickOutside";
+import Image from "next/image";
 
 const ImgViews = ({ close, src }) => {
   let domNode = useClickOutside(() => {
@@ -37,7 +37,11 @@ const ImageView = () => {
     setTimeout(() => {
       const a = document.querySelectorAll("a");
       a.forEach((a) => {
-        if (a.href.includes(".jpg") || a.href.includes(".png") || a.href.includes(".jpeg")) {
+        if (
+          a.href.includes(".jpg") ||
+          a.href.includes(".png") ||
+          a.href.includes(".jpeg")
+        ) {
           if (a.getAttribute("download") === null) {
             a.addEventListener("click", (e) => {
               e.preventDefault();
