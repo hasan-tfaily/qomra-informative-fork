@@ -1,0 +1,66 @@
+{
+  "keyMilestones": "Key Milestones",
+  "menu": {
+    "blogs": "Blogs",
+    "home": "Home",
+    "products": "Products",
+    "products_sub": {
+      "lithium": "Lithium Batteries",
+      "supplies": "Battery Supplies"
+    },
+
+    "quote": "Quote",
+    "services": "Services",
+    "services_sub": {
+      "odm": "ODM",
+      "oem": "OEM",
+      "customization": "Battery Customization"
+    },
+    "about": "About Us",
+    "contact": "Contact",
+    "requestAQuote": "Request A Quote",
+    "haveAnyQuestions": "Have any Questions?"
+  },
+  "exploreMore": "Explore More",
+  "service": "Service",
+
+  "experience": "15+ Years of Excellence",
+  "form": {
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phoneNumber": "Phone Number",
+    "selectProjectType": "Select Project Type",
+    "estimatedBudget": "Estimated Budget",
+    "estimatedTime": "Estimated Time",
+    "address": "Address",
+    "uploadFile": "Upload File",
+    "dragFile": "Drag file here or click the button below",
+    "message": "Message",
+    "residential": "Residential",
+    "industrial": "Industrial"
+  },
+  "footer": {
+    "description": "LITIO is a pioneer in energy storage technology, bringing over 15 years of expertise to the industry",
+    "address_value": "Hazmieh, Beirut and Nabatieh",
+    "copyright": "Copyright &copy; {year} Avrix. All Rights Reserved",
+    "energy": " Energy Solutions"
+  },
+  "accesOurCatalogue": "Access Our Catalogue",
+  "productsDesciption": "Explore our featured products designed to provide uninterrupted energy, long-lasting performance, and advanced safety features.",
+  "sales": "Sales",
+  "technicalSupport": "Technical Support:",
+
+  "sidebar": {
+    "description": "At LITIO, we aim to revolutionize energy storage, providing high-quality, locally manufactured solutions that meet the global standards of reliability and performance.",
+    "addressLabel": "Address",
+    "addressValue": "Hazmieh, Beirut and Nabatieh",
+    "emailLabel": "Email",
+    "emailValue": "sales@litio-energy.com",
+    "contactLabel": "Contact",
+    "contactValue": "+961 70 931 904",
+    "newsletterTitle": "Get Subscribed!",
+    "emailPlaceholder": "Enter your e-mail",
+    "subscribeSuccess": "Thanks For Subscribe"
+  }
+}

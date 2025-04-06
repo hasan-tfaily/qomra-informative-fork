@@ -1,238 +1,150 @@
 {
-    "settings": {
-        "siteName": "Okai",
-        "siteDescription": "Creative Portfolio Agency React Next.JS Template",
-        "formspreeURL": "https://formspree.io/f/your_api_key",
-        "mailchimp": {
-            "url": "",
-            "key": ""
-        },
-        "perPage": 6
+  "settings": {
+    "siteName": "Okai",
+    "siteDescription": "Creative Portfolio Agency React Next.JS Template",
+    "formspreeURL": "https://formspree.io/f/your_api_key",
+    "mailchimp": {
+      "url": "",
+      "key": ""
     },
-    "header": {
-        "logoText": "Okai",
-        "contact": {
-            "label": "Phone:",
-            "value": "+057 951 237 851"
-        },
-        "menu": [
-            {
-                "label": "Home",
-                "link": "/",
-                "children": [
-                    {
-                        "label": "Type 1",
-                        "link": "/"
-                    },
-                    {
-                        "label": "Type 2",
-                        "link": "/home-2"
-                    },
-                    {
-                        "label": "Type 3",
-                        "link": "/home-3"
-                    },
-                    {
-                        "label": "Type 4",
-                        "link": "/home-4"
-                    },
-                    {
-                        "label": "Type 5",
-                        "link": "/home-5"
-                    },
-                    {
-                        "label": "Type 6",
-                        "link": "/home-6"
-                    },
-                    {
-                        "label": "Type 7",
-                        "link": "/home-7"
-                    },
-                    {
-                        "label": "Type 8",
-                        "link": "/home-8"
-                    },
-                    {
-                        "label": "Type 9",
-                        "link": "/home-9"
-                    },
-                    {
-                        "label": "Type 10",
-                        "link": "/home-10"
-                    },
-                    {
-                        "label": "Type 11",
-                        "link": "/home-11"
-                    },
-                    {
-                        "label": "Type 12",
-                        "link": "/home-12"
-                    },
-                    {
-                        "label": "Type 13",
-                        "link": "/home-13"
-                    }
-                ]
-            },
-            {
-                "label": "Portfolio",
-                "link": "/projects",
-                "children": [
-                    {
-                        "label": "Type 1",
-                        "link": "/projects"
-                    },
-                    {
-                        "label": "Type 2",
-                        "link": "/projects-2"
-                    },
-                    {
-                        "label": "Type 3",
-                        "link": "/projects-3"
-                    },
-                    {
-                        "label": "Slider",
-                        "link": "/showcase"
-                    },
-                    {
-                        "label": "Slider 2",
-                        "link": "/showcase-2"
-                    },
-                    {
-                        "label": "Project",
-                        "link": "/projects/project-1"
-                    }
-                ]
-            },
-            {
-                "label": "Pages",
-                "link": "/about",
-                "children": [
-                    {
-                        "label": "About",
-                        "link": "/about"
-                    },
-                    {
-                        "label": "Services",
-                        "link": "/services"
-                    },
-                    {
-                        "label": "Pricing",
-                        "link": "/pricing"
-                    },
-                    {
-                        "label": "Contact",
-                        "link": "/contact"
-                    },
-                    {
-                        "label": "Store",
-                        "link": "/shop"
-                    },
-                    {
-                        "label": "Store Item",
-                        "link": "/product"
-                    },
-                    {
-                        "label": "Coming soon",
-                        "link": "/coming-soon"
-                    },
-                    {
-                        "label": "404",
-                        "link": "/404"
-                    }
-                ]
-            },
-            {
-                "label": "Blog",
-                "link": "/blog",
-                "children": [
-                    {
-                        "label": "List",
-                        "link": "/blog"
-                    },
-                    {
-                        "label": "Publication",
-                        "link": "/blog/the-infrastructure-that-powers-the-world"
-                    }
-                ]
-            }
+    "perPage": 6
+  },
+  "header": {
+    "logoText": "Okai",
+    "contact": {
+      "label": "Phone:",
+      "value": "+057 951 237 851"
+    },
+    "menu": [
+      {
+        "label": "Home",
+        "link": "/",
+        "children": [
+          {
+            "label": "Home",
+            "link": "/"
+          }
         ]
-    },
-    "footer": {
-        "logoText": "Okai",
-        "description": "At Okai we care about each client and each person who works with us and makes great projects possible",
-        "copy": "© 2024 Okai Agency. Developed by bslthemes",
-        "menuTitle": "Menu",
-        "menu": [
-            {
-                "label": "About us",
-                "link": "/about"
-            },
-            {
-                "label": "Services",
-                "link": "/services"
-            },
-            {
-                "label": "Projects",
-                "link": "/projects"
-            },
-            {
-                "label": "Contact",
-                "link": "/contact"
-            }
-        ],
-        "contactTitle": "Contact Us",
-        "contact": [
-            {
-                "label": "Phone",
-                "value": "+051 - 958 237 851"
-            },
-            {
-                "label": "Email",
-                "value": "support@okai.design"
-            },
-            {
-                "label": "Address",
-                "value": "300 St. Mary's L, Suite 8060, Houston,<br> TX 77079, Estados Unidos"
-            }
-        ],
-        "backLabel": "Back to top"
-    },
-    "social": [
-        {
-            "link": "https://facebook.com",
-            "icon": "fab fa-facebook-f",
-            "title": "Facebook"
-        },
-        {
-            "link": "https://behance.com",
-            "icon": "fab fa-behance",
-            "title": "Behance"
-        },
-        {
-            "link": "https://instagram.com",
-            "icon": "fab fa-instagram",
-            "title": "Instagram"
-        }
+      },
+      {
+        "label": "Portfolio",
+        "link": "/projects",
+        "children": [
+          {
+            "label": "Slider",
+            "link": "/showcase"
+          }
+        ]
+      },
+      {
+        "label": "Pages",
+        "link": "/about",
+        "children": [
+          {
+            "label": "About",
+            "link": "/about"
+          },
+          {
+            "label": "Services",
+            "link": "/home-9"
+          },
+          {
+            "label": "Pricing",
+            "link": "/pricing"
+          },
+          {
+            "label": "Contact",
+            "link": "/contact"
+          }
+        ]
+      },
+      {
+        "label": "Blog",
+        "link": "/blog",
+        "children": [
+          {
+            "label": "List",
+            "link": "/blog"
+          }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "logoText": "Okai",
+    "description": "At Okai we care about each client and each person who works with us and makes great projects possible",
+    "copy": "© 2024 Okai Agency. Developed by bslthemes",
+    "menuTitle": "Menu",
+    "menu": [
+      {
+        "label": "About us",
+        "link": "/about"
+      },
+      {
+        "label": "Services",
+        "link": "/services"
+      },
+      {
+        "label": "Projects",
+        "link": "/projects"
+      },
+      {
+        "label": "Contact",
+        "link": "/contact"
+      }
     ],
-    "projects": {
-        "categories": [
-            {
-                "name": "Web Templates",
-                "slug": "web-templates"
-            },
-            {
-                "name": "UI Elements",
-                "slug": "ui-elements"
-            },
-            {
-                "name": "Logos",
-                "slug": "logos"
-            },
-            {
-                "name": "Drawings",
-                "slug": "drawings"
-            }
-        ]
+    "contactTitle": "Contact Us",
+    "contact": [
+      {
+        "label": "Phone",
+        "value": "+051 - 958 237 851"
+      },
+      {
+        "label": "Email",
+        "value": "support@okai.design"
+      },
+      {
+        "label": "Address",
+        "value": "300 St. Mary's L, Suite 8060, Houston,<br> TX 77079, Estados Unidos"
+      }
+    ],
+    "backLabel": "Back to top"
+  },
+  "social": [
+    {
+      "link": "https://facebook.com",
+      "icon": "fab fa-facebook-f",
+      "title": "Facebook"
+    },
+    {
+      "link": "https://behance.com",
+      "icon": "fab fa-behance",
+      "title": "Behance"
+    },
+    {
+      "link": "https://instagram.com",
+      "icon": "fab fa-instagram",
+      "title": "Instagram"
     }
+  ],
+  "projects": {
+    "categories": [
+      {
+        "name": "Web Templates",
+        "slug": "web-templates"
+      },
+      {
+        "name": "UI Elements",
+        "slug": "ui-elements"
+      },
+      {
+        "name": "Logos",
+        "slug": "logos"
+      },
+      {
+        "name": "Drawings",
+        "slug": "drawings"
+      }
+    ]
+  }
 }

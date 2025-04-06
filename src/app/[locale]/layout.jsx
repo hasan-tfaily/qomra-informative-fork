@@ -8,7 +8,6 @@ import { register } from "swiper/element/bundle";
 register();
 import AppData from "@data/app.json";
 
-// Define Caros Font
 const caros = localFont({
   src: [
     // Regular variants
@@ -83,14 +82,19 @@ export const metadata = {
   description: AppData.settings.siteDescription,
 };
 
-const Layouts = ({ children }) => {
+const Layouts = ({ children, params }) => {
+  const { locale } = params;
+
   return (
     <html
-      lang="en"
+      lang={locale}
+      dir={locale === "ar" ? "rtl" : "ltr"}
       className={`${caros.variable} ${droidArabic.variable}`}
       style={{
         "--bs-font-sans-serif":
-          "var(--font-primary), var(--bs-font-sans-serif)",
+          locale === "ar"
+            ? "var(--font-arabic), var(--bs-font-sans-serif)"
+            : "var(--font-primary), var(--bs-font-sans-serif)",
       }}
     >
       <body>

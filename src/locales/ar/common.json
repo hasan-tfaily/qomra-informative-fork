@@ -1,0 +1,63 @@
+{
+  "menu": {
+    "blogs": "المدونات",
+    "home": "الرئيسية",
+    "products": "المنتجات",
+    "products_sub": {
+      "lithium": "بطاريات الليثيوم",
+      "supplies": "لوازم البطاريات"
+    },
+    "quote": "طلب عرض سعر",
+    "services": "الخدمات",
+    "services_sub": {
+      "odm": "التصنيع حسب التصميم (ODM)",
+      "oem": "التصنيع حسب الطلب (OEM)",
+      "customization": "تخصيص البطاريات"
+    },
+    "about": "من نحن",
+    "contact": "اتصل بنا",
+    "requestAQuote": "طلب عرض سعر",
+    "haveAnyQuestions": "هل لديك أي أسئلة؟"
+  },
+  "exploreMore": "استكشاف المزيد",
+  "keyMilestones": "المحطات الرئيسية",
+  "form": {
+    "firstName": "الاسم الأول",
+    "lastName": "الاسم الأخير",
+    "email": "البريد الإلكتروني",
+    "phoneNumber": "رقم الهاتف",
+    "selectProjectType": "اختر نوع المشروع",
+    "estimatedBudget": "الميزانية المقدرة",
+    "estimatedTime": "الوقت المقدر",
+    "address": "العنوان",
+    "uploadFile": "رفع ملف",
+    "dragFile": "اسحب الملف هنا أو انقر على الزر أدناه",
+    "message": "الرسالة",
+    "residential": "سكني",
+    "industrial": "صناعي"
+  },
+  "footer": {
+    "description": "ليتيو هي رائدة في تكنولوجيا تخزين الطاقة، حيث تجلب أكثر من 15 عامًا من الخبرة في الصناعة",
+    "address_value": "حازمية، بيروت والنبطية",
+    "copyright": "حقوق النشر &copy; {year} أفريكس. جميع الحقوق محفوظة",
+    "energy": "حلول الطاقة"
+  },
+  "accesOurCatalogue": "الوصول إلى كتالوجنا",
+  "productsDesciption": "استكشف منتجاتنا المميزة المصممة لتوفير طاقة مستمرة، وأداء يدوم طويلاً، وميزات أمان متقدمة.",
+  "sales": "المبيعات",
+  "technicalSupport": "الدعم الفني",
+  "service": "الخدمة",
+  "experience": "أكثر من 15 عامًا من التميز",
+  "sidebar": {
+    "description": "نسعى في ليتيو إلى إحداث ثورة في مجال تخزين الطاقة، من خلال تقديم حلول عالية الجودة تُصنع محلياً وتلبي المعايير العالمية للموثوقية والأداء.",
+    "addressLabel": "العنوان",
+    "addressValue": "حازمية، بيروت والنبطية",
+    "emailLabel": "البريد الإلكتروني",
+    "emailValue": "sales@litio-energy.com",
+    "contactLabel": "الاتصال",
+    "contactValue": "+961 70 931 904",
+    "newsletterTitle": "اشترك الآن!",
+    "emailPlaceholder": "أدخل بريدك الإلكتروني",
+    "subscribeSuccess": "شكراً على اشتراكك"
+  }
+}

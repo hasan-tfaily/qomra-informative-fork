@@ -24,6 +24,7 @@
     "react-dom": "^18.3.1",
     "react-masonry": "^1.0.7",
     "react-modal-video": "^2.0.2",
+    "react-toastify": "^11.0.5",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
     "sass": "^1.80.1",

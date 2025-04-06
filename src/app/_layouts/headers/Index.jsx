@@ -45,7 +45,9 @@ const HeaderModule = ({ layout }) => {
         <div className="container">
           <div className="row mil-aic">
             <div className="col-6">
-              <Image src={whitelogo.src} width={90} height={25} alt="logo" />
+              <Link href={"/"}>
+                <Image src={whitelogo.src} width={90} height={25} alt="logo" />
+              </Link>
             </div>
             <div className="col-6 mil-jce mil-aic">
               <div className="mil-phone mil-group-text mil-fs14">
@@ -74,50 +76,34 @@ const HeaderModule = ({ layout }) => {
       <div className={`mil-menu-window ${toggle ? "mil-active" : ""}`}>
         <div className="container">
           <ul className="mil-main-menu mil-c-gone">
-            {AppData.header.menu.map((item, index) => (
-              <li
-                className={`menu-item ${
-                  item.children.length > 0 ? "menu-item-has-children" : ""
-                } ${isPathActive(item.link) ? "current-menu-item" : ""}`}
-                key={`header-menu-item-${index}`}
-              >
-                <Link
-                  href={item.link}
-                  onClick={
-                    item.children.length > 0
-                      ? (e) => handleSubMenuClick(index, e)
-                      : null
-                  }
-                >
-                  {item.label}
-                </Link>
-                {item.children.length > 0 && (
-                  <ul
-                    className={
-                      activeSubMenu === index
-                        ? "sub-menu mil-active"
-                        : "sub-menu"
-                    }
+            {AppData.header.menu.flatMap((item, index) => {
+              if (item.children.length > 0) {
+                return item.children.map((subitem, subIndex) => (
+                  <li
+                    className={`menu-item ${
+                      isPathActive(subitem.link) ? "current-menu-item" : ""
+                    }`}
+                    key={`header-menu-item-${index}-${subIndex}`}
                   >
-                    {item.children.map((subitem, subIndex) => (
-                      <li
-                        key={`header-submenu-item-${subIndex}`}
-                        className={
-                          isPathActive(subitem.link)
-                            ? "menu-item current-menu-item"
-                            : "menu-item"
-                        }
-                      >
-                        <Link href={subitem.link}>{subitem.label}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-            <li>
+                    <Link href={subitem.link}>{subitem.label}</Link>
+                  </li>
+                ));
+              } else {
+                return (
+                  <li
+                    className={`menu-item ${
+                      isPathActive(item.link) ? "current-menu-item" : ""
+                    }`}
+                    key={`header-menu-item-${index}`}
+                  >
+                    <Link href={item.link}>{item.label}</Link>
+                  </li>
+                );
+              }
+            })}
+            {/* <li>
               <LanguageSwitcher />
-            </li>
+            </li> */}
           </ul>
           <ul className="mil-social mil-center">
             {AppData.social.map((item, key) => (

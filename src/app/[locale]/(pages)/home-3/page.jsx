@@ -46,6 +46,7 @@ async function Home3() {
         button={{ label: "View portfolio", link: "/projects-3" }}
         imgLayout={"out-right"}
       />
+
       <ServicesTwoSection />
       <AboutUsSection />
       <Suspense fallback={<div>Loading...</div>}>
