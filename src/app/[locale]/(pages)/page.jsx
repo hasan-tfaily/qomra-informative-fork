@@ -37,20 +37,19 @@ async function Home1() {
   const projects = await getAllProjects();
   const HomePage = await getHomePage();
 
-  console.log(HomePage.data.coverImage.url);
+  // console.log(HomePage.data.featuredSection);
   return (
     <OkaiLayout>
       <HeroSection
-        imageUrl={HomePage.data.coverImage.url}
         image={{
           url: `http://137.184.197.76:1337${HomePage.data.coverImage.url}`,
-          alt: "banner",
+          alt: HomePage.data.coverImage.alternativeText,
         }}
         title={HomePage.data.title}
         button={{ label: "See Projects", link: "/projects-2" }}
         imgLayout={"out-right"}
       />
-      <ExperienceSection />
+      <ExperienceSection data={HomePage.data.featuredSection} />
       <Suspense fallback={<div>Loading...</div>}>
         <PortfolioSection
           projects={projects}

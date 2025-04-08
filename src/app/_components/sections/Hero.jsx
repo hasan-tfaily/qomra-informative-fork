@@ -5,7 +5,7 @@ const HeroOne = ({
   image,
   title,
   button,
-  imageUrl,
+
   imgLayout = false,
   rowReverse = false,
 }) => {
@@ -41,7 +41,7 @@ const HeroOne = ({
                 }
               >
                 <Image
-                  src={`http://137.184.197.76:1337${imageUrl}`}
+                  src={image.url}
                   fill
                   sizes="(max-width: 768px) 100vw, 80vw"
                   priority
