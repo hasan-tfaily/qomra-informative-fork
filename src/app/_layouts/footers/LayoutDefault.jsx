@@ -11,7 +11,10 @@ const DefaultFooter = () => {
   useEffect(() => {
     BackToTop();
   }, []);
-
+  const footer = `With expert equipment and
+versatile spaces, we empower
+creators, clients, and teams to
+bring their boldest ideas to life.`;
   return (
     <>
       {/* footer */}
@@ -24,7 +27,7 @@ const DefaultFooter = () => {
               </Link>
               <p
                 className="mil-text mil-fs16 mil-mb60 mil-up"
-                dangerouslySetInnerHTML={{ __html: AppData.footer.description }}
+                dangerouslySetInnerHTML={{ __html: footer }}
               />
               <ul className="mil-social mil-up">
                 {AppData.social.map((item, key) => (
