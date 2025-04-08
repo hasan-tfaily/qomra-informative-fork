@@ -9,7 +9,6 @@ const TestimonialSlider = ({
   paddingBottom = 120,
   data,
 }) => {
-  console.log(data);
   return (
     <>
       {/* reviews */}

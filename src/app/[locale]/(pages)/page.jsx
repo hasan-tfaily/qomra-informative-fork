@@ -37,7 +37,6 @@ async function Home1() {
   const projects = await getAllProjects();
   const HomePage = await getHomePage();
 
-  // console.log(HomePage.data.testemonial);
   return (
     <OkaiLayout>
       <HeroSection
@@ -60,7 +59,7 @@ async function Home1() {
       <CallToActionSection data={HomePage.data.divider} />
       <TestimonialSlider data={HomePage.data.testemonial} items={[]} />
 
-      <CallToActionTwoSection />
+      <CallToActionTwoSection data={HomePage.data.contactUsSection} />
     </OkaiLayout>
   );
 }
