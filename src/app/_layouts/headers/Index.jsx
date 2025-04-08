@@ -46,7 +46,7 @@ const HeaderModule = ({ layout }) => {
           <div className="row mil-aic">
             <div className="col-6">
               <Link href={"/"}>
-                <Image src={whitelogo.src} width={90} height={25} alt="logo" />
+                <Image src={whitelogo.src} width={110} height={25} alt="logo" />
               </Link>
             </div>
             <div className="col-6 mil-jce mil-aic">
