@@ -13,6 +13,7 @@ import ExperienceSection from "@/src/app/_components/sections/Experience";
 import CallToActionSection from "@/src/app/_components/sections/CallToAction";
 import LatestPostsSection from "@/src/app/_components/sections/LatestPosts";
 import CallToActionTwoSection from "@/src/app/_components/sections/CallToActionTwo";
+import { getHomePage } from "@/core/repository";
 
 const PortfolioSection = dynamic(
   () => import("@/src/app/_components/sections/Portfolio"),
@@ -34,12 +35,18 @@ export const metadata = {
 async function Home1() {
   const posts = await getAllPosts();
   const projects = await getAllProjects();
+  const HomePage = await getHomePage();
 
+  console.log(HomePage.data.coverImage.url);
   return (
     <OkaiLayout>
       <HeroSection
-        image={{ url: "/img/banners/1.jpg", alt: "banner" }}
-        title={"Hi. I am Saleem visual designer"}
+        imageUrl={HomePage.data.coverImage.url}
+        image={{
+          url: `http://137.184.197.76:1337${HomePage.data.coverImage.url}`,
+          alt: "banner",
+        }}
+        title={HomePage.data.title}
         button={{ label: "See Projects", link: "/projects-2" }}
         imgLayout={"out-right"}
       />

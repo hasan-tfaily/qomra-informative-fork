@@ -6,6 +6,9 @@ const nextConfig = {
   sassOptions: {
     silenceDeprecations: ["legacy-js-api"],
   },
+  images: {
+    domains: ["137.184.197.76"], // Add your hostname here
+  },
 };
 
 module.exports = withNextIntl(nextConfig);
