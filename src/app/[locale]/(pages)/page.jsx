@@ -37,7 +37,7 @@ async function Home1() {
   const projects = await getAllProjects();
   const HomePage = await getHomePage();
 
-  // console.log(HomePage.data.featuredSection);
+  // console.log(HomePage.data.portfolio);
   return (
     <OkaiLayout>
       <HeroSection
@@ -52,6 +52,7 @@ async function Home1() {
       <ExperienceSection data={HomePage.data.featuredSection} />
       <Suspense fallback={<div>Loading...</div>}>
         <PortfolioSection
+          data={HomePage.data.portfolio}
           projects={projects}
           order={["project-1", "project-3", "project-2", "project-4"]}
         />
