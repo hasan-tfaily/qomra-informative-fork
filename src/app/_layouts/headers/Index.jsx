@@ -15,7 +15,7 @@ const HeaderModule = ({ layout }) => {
   const asPath = usePathname();
 
   const isPathActive = (path) => {
-    return asPath.indexOf(path) !== -1 && asPath === path;
+    return asPath === path;
   };
 
   const handleSubMenuClick = (index, e) => {
@@ -24,7 +24,6 @@ const HeaderModule = ({ layout }) => {
   };
 
   useEffect(() => {
-    // close mobile menu
     setToggle(false);
   }, [asPath]);
 
@@ -58,10 +57,8 @@ const HeaderModule = ({ layout }) => {
               </div>
               <div className="mil-buttons-frame">
                 <div
-                  className={`mil-menu-btn mil-c-gone ${
-                    toggle ? "mil-active" : ""
-                  }`}
-                  onClick={() => menuOpen()}
+                  className={`mil-menu-btn ${toggle ? "mil-active" : ""}`}
+                  onClick={menuOpen}
                 >
                   <span></span>
                 </div>
@@ -70,40 +67,54 @@ const HeaderModule = ({ layout }) => {
           </div>
         </div>
       </div>
-      {/* top panel end */}
 
       {/* menu */}
       <div className={`mil-menu-window ${toggle ? "mil-active" : ""}`}>
         <div className="container">
-          <ul className="mil-main-menu mil-c-gone">
-            {AppData.header.menu.flatMap((item, index) => {
-              if (item.children.length > 0) {
-                return item.children.map((subitem, subIndex) => (
-                  <li
-                    className={`menu-item ${
-                      isPathActive(subitem.link) ? "current-menu-item" : ""
-                    }`}
-                    key={`header-menu-item-${index}-${subIndex}`}
+          <ul className="mil-main-menu">
+            {AppData.header.menu.map((item, index) => (
+              <li
+                key={`header-menu-item-${index}`}
+                className={item.children?.length ? "mil-has-children" : ""}
+              >
+                {item.children?.length ? (
+                  <>
+                    <a
+                      href={item.link}
+                      onClick={(e) => handleSubMenuClick(index, e)}
+                      className={isPathActive(item.link) ? "mil-active" : ""}
+                    >
+                      {item.label}
+                    </a>
+                    <ul
+                      className={`mil-submenu ${
+                        activeSubMenu === index ? "mil-active" : ""
+                      }`}
+                    >
+                      {item.children.map((subitem, subIndex) => (
+                        <li key={`submenu-item-${subIndex}`}>
+                          <Link
+                            href={subitem.link}
+                            className={
+                              isPathActive(subitem.link) ? "mil-active" : ""
+                            }
+                          >
+                            {subitem.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                ) : (
+                  <Link
+                    href={item.link}
+                    className={isPathActive(item.link) ? "mil-active" : ""}
                   >
-                    <Link href={subitem.link}>{subitem.label}</Link>
-                  </li>
-                ));
-              } else {
-                return (
-                  <li
-                    className={`menu-item ${
-                      isPathActive(item.link) ? "current-menu-item" : ""
-                    }`}
-                    key={`header-menu-item-${index}`}
-                  >
-                    <Link href={item.link}>{item.label}</Link>
-                  </li>
-                );
-              }
-            })}
-            {/* <li>
-              <LanguageSwitcher />
-            </li> */}
+                    {item.label}
+                  </Link>
+                )}
+              </li>
+            ))}
           </ul>
           <ul className="mil-social mil-center">
             {AppData.social.map((item, key) => (
@@ -111,8 +122,8 @@ const HeaderModule = ({ layout }) => {
                 <a
                   href={item.link}
                   target="_blank"
+                  rel="noopener noreferrer"
                   title={item.title}
-                  className="mil-c-gone"
                 >
                   <i className={item.icon}></i>
                 </a>
@@ -121,7 +132,6 @@ const HeaderModule = ({ layout }) => {
           </ul>
         </div>
       </div>
-      {/* menu end */}
     </>
   );
 };
