@@ -58,32 +58,8 @@ async function Home1() {
         />
       </Suspense>
       <CallToActionSection data={HomePage.data.divider} />
-      <TestimonialSlider
-        data={HomePage.data.testemonial}
-        items={[
-          {
-            name: "Lucas Wolfer",
-            role: "SEO ocean",
-            image: "/img/faces/3.jpg",
-            text: "They have the best customer service. The project is also incredibly flexible and easy to use and explore. Glad to have met this team!",
-          },
-          {
-            name: "Lucas Wolfer",
-            role: "SEO ocean",
-            image: "/img/faces/2.jpg",
-            text: "They have the best customer service. The project is also incredibly flexible and easy to use and explore. Glad to have met this team!",
-          },
-          {
-            name: "Lucas Wolfer",
-            role: "SEO ocean",
-            image: "/img/faces/1.jpg",
-            text: "They have the best customer service. The project is also incredibly flexible and easy to use and explore. The user interface is intuitive and user-friendly. I am glad to have met this amazing team!",
-          },
-        ]}
-      />
-      <Suspense fallback={<div>Loading...</div>}>
-        <LatestPostsSection posts={posts} />
-      </Suspense>
+      <TestimonialSlider data={HomePage.data.testemonial} items={[]} />
+
       <CallToActionTwoSection />
     </OkaiLayout>
   );
