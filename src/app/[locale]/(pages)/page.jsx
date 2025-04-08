@@ -37,7 +37,7 @@ async function Home1() {
   const projects = await getAllProjects();
   const HomePage = await getHomePage();
 
-  // console.log(HomePage.data.portfolio);
+  // console.log(HomePage.data.divider);
   return (
     <OkaiLayout>
       <HeroSection
@@ -57,7 +57,7 @@ async function Home1() {
           order={["project-1", "project-3", "project-2", "project-4"]}
         />
       </Suspense>
-      <CallToActionSection />
+      <CallToActionSection data={HomePage.data.divider} />
       <TestimonialSlider
         items={[
           {
