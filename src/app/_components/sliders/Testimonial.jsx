@@ -7,7 +7,9 @@ const TestimonialSlider = ({
   items,
   paddingTop = 120,
   paddingBottom = 120,
+  data,
 }) => {
+  console.log(data);
   return (
     <>
       {/* reviews */}
@@ -19,7 +21,7 @@ const TestimonialSlider = ({
                 {...SliderProps.milReviewsSlider}
                 className="swiper-container mil-reviews-slider mil-c-swipe"
               >
-                {items.map((item, key) => (
+                {data.review.map((item, key) => (
                   <SwiperSlide
                     className="swiper-slide"
                     key={`testimonial-slider-item-${key}`}
@@ -34,10 +36,10 @@ const TestimonialSlider = ({
                         <img src={item.image} alt={item.name} />
                       </div>
                       <p className="mil-text mil-fs30 mil-light mil-tac mil-mb60  mil-up">
-                        {item.text}
+                        {item.description}
                       </p>
                       <h6 className="mil-fs18 mil-mb15  mil-up">{item.name}</h6>
-                      <div className="mil-up">{item.role}</div>
+                      <div className="mil-up">{item.position}</div>
                     </div>
                   </SwiperSlide>
                 ))}
