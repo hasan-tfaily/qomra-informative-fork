@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
-import whitelogo from "../../../../public/img/logo/whitelogo.png";
+import whitelogo from "../../../../public/img/logo/qomrawhitelogo.png";
 import LanguageSwitcher from "../../_components/languageSwitcher";
 
 const HeaderModule = ({ layout }) => {
