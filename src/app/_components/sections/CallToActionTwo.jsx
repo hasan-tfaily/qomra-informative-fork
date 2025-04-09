@@ -8,13 +8,19 @@ const CallToActionTwoSection = ({ darkUI = false, data }) => {
     uiClass = "soft";
   }
 
+  // Ensure data is defined and use default values from Data if it's undefined
+  const title = data?.title ?? Data.title;
+  const differentColorWord =
+    data?.differentColorWord ?? Data.differentColorWord;
+  const description = data?.description ?? Data.description;
+
   return (
     <>
       {/* call to action */}
       <div className={`mil-${uiClass}-section mil-up mil-p-180-180`}>
         <div className="container">
           <h2 className="mil-fs68 mil-light mil-mb30 mil-up">
-            {data.title}{" "}
+            {title}{" "}
             <Link
               href={Data.line1.link}
               className={
@@ -23,12 +29,10 @@ const CallToActionTwoSection = ({ darkUI = false, data }) => {
                   : "mil-text-link mil-accent-soft mil-c-gone"
               }
             >
-              {data.differentColorWord}
+              {differentColorWord}
             </Link>
           </h2>
-          <p className="mil-text mil-fs26 mil-light mil-up">
-            {data.description} !
-          </p>
+          <p className="mil-text mil-fs26 mil-light mil-up">{description} !</p>
         </div>
       </div>
       {/* call to action end */}

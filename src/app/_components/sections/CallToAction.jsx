@@ -11,7 +11,8 @@ const CallToActionSection = ({ data }) => {
             <div className="row mil-aic">
               <div className="col-lg-8 mil-up">
                 <p className="mil-text mil-fs26 mil-light mil-mb30">
-                  {data.title}
+                  {data.title ?? Data.title}{" "}
+                  {/* Fallback to Data.title if data.title is null or undefined */}
                 </p>
               </div>
               <div className="col-lg-4 mil-jce mil-992-jcs mil-up">
