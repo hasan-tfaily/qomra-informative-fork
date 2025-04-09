@@ -9,6 +9,8 @@ const TestimonialSlider = ({
   paddingBottom = 120,
   data,
 }) => {
+  const reviews = data?.review ?? items; // <-- fallback: use items if data.review is missing
+
   return (
     <>
       {/* reviews */}
@@ -20,7 +22,7 @@ const TestimonialSlider = ({
                 {...SliderProps.milReviewsSlider}
                 className="swiper-container mil-reviews-slider mil-c-swipe"
               >
-                {data.review.map((item, key) => (
+                {reviews?.map((item, key) => (
                   <SwiperSlide
                     className="swiper-slide"
                     key={`testimonial-slider-item-${key}`}
@@ -34,19 +36,21 @@ const TestimonialSlider = ({
                       <div className="mil-user mil-mb60 mil-up">
                         <img src={item.image} alt={item.name} />
                       </div>
-                      <p className="mil-text mil-fs30 mil-light mil-tac mil-mb60  mil-up">
+                      <p className="mil-text mil-fs30 mil-light mil-tac mil-mb60 mil-up">
                         {item.description}
                       </p>
-                      <h6 className="mil-fs18 mil-mb15  mil-up">{item.name}</h6>
+                      <h6 className="mil-fs18 mil-mb15 mil-up">{item.name}</h6>
                       <div className="mil-up">{item.position}</div>
                     </div>
                   </SwiperSlide>
                 ))}
               </Swiper>
             </div>
+
             <div className="col-10 col-md-5 mil-relative">
               <div className="mil-reviews-nav mil-up">
                 <div className="mil-slider-btn mil-prev mil-c-gone">
+                  {/* left arrow SVG */}
                   <svg
                     width="28"
                     height="15"
@@ -61,6 +65,7 @@ const TestimonialSlider = ({
                   </svg>
                 </div>
                 <div className="mil-slider-btn mil-next mil-c-gone">
+                  {/* right arrow SVG */}
                   <svg
                     width="28"
                     height="15"
@@ -83,4 +88,5 @@ const TestimonialSlider = ({
     </>
   );
 };
+
 export default TestimonialSlider;
