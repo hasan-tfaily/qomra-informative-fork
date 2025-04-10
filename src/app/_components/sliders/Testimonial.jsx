@@ -34,7 +34,10 @@ const TestimonialSlider = ({
                       data-swiper-parallax-opacity="0"
                     >
                       <div className="mil-user mil-mb60 mil-up">
-                        <img src={item.image} alt={item.name} />
+                        <img
+                          src={`http://137.184.197.76:1337${item.image.url}`}
+                          alt={item.name}
+                        />
                       </div>
                       <p className="mil-text mil-fs30 mil-light mil-tac mil-mb60 mil-up">
                         {item.description}

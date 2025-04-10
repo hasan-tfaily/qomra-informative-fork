@@ -12,11 +12,11 @@ const ServicesFourSection = ({
   image = false,
   reverse = false,
   heading = true,
+  data,
 }) => {
   useEffect(() => {
     Accordion();
   }, []);
-
   return (
     <>
       {/* services */}
@@ -31,29 +31,27 @@ const ServicesFourSection = ({
           >
             <div className="col-lg-5">
               {heading == 1 && (
-                <h2 className="mil-fs42 mil-mb90 mil-up">{Data.title}</h2>
+                <h2 className="mil-fs42 mil-mb90 mil-up">{data.title}</h2>
               )}
               <div className="mil-accordion mil-mb90">
-                {Data.items.map((item, key) => (
-                  <div
-                    className="mil-accordion-group mil-up"
-                    key={`services4-item-${key}`}
-                  >
-                    <div className="mil-accordion-menu mil-closed mil-c-gone mil-fs20">
-                      <span>{item.title}</span>
-                      <span className="mil-accordion-icon"></span>
-                    </div>
-                    <div className="mil-accordion-content">
-                      <p className="mil-text">{item.text}</p>
-                    </div>
+                <div
+                  className="mil-accordion-group mil-up"
+                  key={`services4-item-1`}
+                >
+                  <div className="mil-accordion-menu mil-closed mil-c-gone mil-fs20">
+                    <span>{data.subtitle}</span>
+                    <span className="mil-accordion-icon"></span>
                   </div>
-                ))}
+                  <div className="mil-accordion-content">
+                    <p className="mil-text">{data.description}</p>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="col-lg-6">
               <div className="mil-just-image mil-s mil-mb90 mil-up">
                 <Image
-                  src={image ? image : Data.image.url}
+                  src={`http://137.184.197.76:1337${data.image.url}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   alt={Data.image.alt}

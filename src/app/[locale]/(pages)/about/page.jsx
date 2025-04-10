@@ -12,6 +12,7 @@ import ServicesFourSection from "@/src/app/_components/sections/ServicesFour";
 import CallToActionSection from "@/src/app/_components/sections/CallToAction";
 import TeamSection from "@/src/app/_components/sections/Team";
 import CallToActionThreeSection from "@/src/app/_components/sections/CallToActionThree";
+import { getAboutUsPage } from "@/core/repository";
 
 const TestimonialSlider = dynamic(
   () => import("@/src/app/_components/sliders/Testimonial"),
@@ -26,17 +27,25 @@ export const metadata = {
 };
 
 async function AboutPage() {
+  const aboutUs = await getAboutUsPage();
+  // console.log(aboutUs.data);
+
   return (
     <OkaiLayout>
       <PageBanner
         pageTitle={"About us"}
         breadTitle={"About us"}
-        bgImage={"/img/banners/14.jpg"}
+        bgImage={`http://137.184.197.76:1337${aboutUs.data.aboutUsHeader.coverImage.url}`}
       />
-      <ExperienceEightSection />
-      <AboutUsTwoSection />
-      <ServicesFourSection paddingTop={120} paddingBottom={30} />
+      <ExperienceEightSection data={aboutUs.data.aboutUsHeader} />
+      <AboutUsTwoSection data={aboutUs.data.mission} />
+      <ServicesFourSection
+        paddingTop={120}
+        paddingBottom={30}
+        data={aboutUs.data.vision}
+      />
       <TestimonialSlider
+        data={aboutUs.data.Testimonials[0]}
         items={[
           {
             name: "Lucas Wolfer",
@@ -60,9 +69,9 @@ async function AboutPage() {
         paddingTop={0}
         paddingBottom={120}
       />
-      <CallToActionSection />
-      <TeamSection />
-      <CallToActionThreeSection />
+      <CallToActionSection data={aboutUs.data.divider} />
+
+      <CallToActionThreeSection data={aboutUs.data.divider2} />
     </OkaiLayout>
   );
 }
