@@ -17,6 +17,9 @@ const ServicesFourSection = ({
   useEffect(() => {
     Accordion();
   }, []);
+
+  const content = data ?? Data; // <- fallback: use JSON Data if data is undefined
+
   return (
     <>
       {/* services */}
@@ -31,7 +34,7 @@ const ServicesFourSection = ({
           >
             <div className="col-lg-5">
               {heading == 1 && (
-                <h2 className="mil-fs42 mil-mb90 mil-up">{data.title}</h2>
+                <h2 className="mil-fs42 mil-mb90 mil-up">{content.title}</h2>
               )}
               <div className="mil-accordion mil-mb90">
                 <div
@@ -39,11 +42,11 @@ const ServicesFourSection = ({
                   key={`services4-item-1`}
                 >
                   <div className="mil-accordion-menu mil-closed mil-c-gone mil-fs20">
-                    <span>{data.subtitle}</span>
+                    <span>{content.subtitle}</span>
                     <span className="mil-accordion-icon"></span>
                   </div>
                   <div className="mil-accordion-content">
-                    <p className="mil-text">{data.description}</p>
+                    <p className="mil-text">{content.description}</p>
                   </div>
                 </div>
               </div>
@@ -51,10 +54,10 @@ const ServicesFourSection = ({
             <div className="col-lg-6">
               <div className="mil-just-image mil-s mil-mb90 mil-up">
                 <Image
-                  src={`http://137.184.197.76:1337${data.image.url}`}
+                  src={`http://137.184.197.76:1337${content.image.url}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  alt={Data.image.alt}
+                  alt={content.image.alt}
                   className="mil-scale-img"
                   data-value-1="1"
                   data-value-2="1.25"
@@ -68,4 +71,5 @@ const ServicesFourSection = ({
     </>
   );
 };
+
 export default ServicesFourSection;
