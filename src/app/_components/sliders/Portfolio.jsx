@@ -66,7 +66,7 @@ const PortfolioSlider = ({
                             src={`http://137.184.197.76:1337${item.url}`}
                             fill
                             sizes="(max-width: 768px) 100vw, 50vw"
-                            alt={item.alternativeText}
+                            alt={item.alternativeText ?? "image"}
                             className="mil-scale-img"
                             data-value-1="1"
                             data-value-2="1.25"

@@ -6,7 +6,8 @@ import Link from "next/link";
 import { BackToTop } from "@/src/app/_common/utilits";
 
 import { useEffect } from "react";
-
+import whitelogo from "../../../../public/img/Logo/qomrawhitelogo.png";
+import Image from "next/image";
 const DefaultFooter = () => {
   useEffect(() => {
     BackToTop();
@@ -23,7 +24,7 @@ bring their boldest ideas to life.`;
           <div className="row mil-jcb">
             <div className="col-8 col-lg-4 mil-mb90">
               <Link href="/" className="mil-logo mil-mb60 mil-up mil-c-gone">
-                {AppData.footer.logoText}
+                <Image src={whitelogo.src} width={110} height={25} alt="logo" />
               </Link>
               <p
                 className="mil-text mil-fs16 mil-mb60 mil-up"
