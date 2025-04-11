@@ -68,9 +68,9 @@ async function Home9() {
         />
       </Suspense>
       <PartnersTwoSection images={services.data.Equipment.image} />
-      <Suspense fallback={<div>Loading...</div>}>
+      {/* <Suspense fallback={<div>Loading...</div>}>
         <LatestPostsSection posts={posts} />
-      </Suspense>
+      </Suspense> */}
     </OkaiLayout>
   );
 }
