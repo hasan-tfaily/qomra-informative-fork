@@ -15,6 +15,7 @@ import ExperienceFiveSection from "@/src/app/_components/sections/ExperienceFive
 import ServicesFourSection from "@/src/app/_components/sections/ServicesFour";
 import CallToActionTwoSection from "@/src/app/_components/sections/CallToActionTwo";
 import LatestPostsSection from "@/src/app/_components/sections/LatestPosts";
+import { getServicesPage } from "@/core/repository";
 
 const PortfolioSlider = dynamic(
   () => import("@/src/app/_components/sliders/Portfolio"),
@@ -32,29 +33,30 @@ export const metadata = {
 async function Home9() {
   const posts = await getAllPosts();
   const projects = await getAllProjects();
-
+  const services = await getServicesPage();
   return (
     <OkaiLayout>
       <HeroThreeSection
-        image={{ url: "/img/banners/9.jpg", alt: "banner" }}
-        title={"User interface designer"}
-        subtitle={"I'm Janez Novak"}
+        image={{
+          url: `http://137.184.197.76:1337${services.data.servicesHeaderSection.image.url}`,
+          alt: "banner",
+        }}
+        title={services.data.servicesHeaderSection.title}
+        subtitle={services.data.servicesHeaderSection.headline}
         button={{ label: "View portfolio", link: "/projects-3" }}
         button2={{ label: "Contact me", link: "/contact" }}
       />
-      <ExperienceFiveSection />
+      <ExperienceFiveSection data={services.data.servicesHeaderSection} />
       <AboutUsSection
-        subtitle={"About us"}
-        title={"My name is Janez A. I am a designer"}
-        description={
-          "My first business card designed 7 years ago gave us the motivation and drive to be today offering a different and personalized service."
-        }
+        subtitle={services.data.QomraCreation.title}
+        title={services.data.QomraCreation.subtitle}
+        description={""}
         button={{ label: "Continue", link: "/about" }}
-        image={"/img/about/7.jpg"}
+        image={`http://137.184.197.76:1337${services.data.QomraCreation.image.url}`}
         paddingTop={30}
         paddingBottom={120}
       />
-      <ServicesFourSection />
+      <ServicesFourSection data={services.data.services} />
       <Suspense fallback={<div>Loading...</div>}>
         <PortfolioSlider
           projects={projects}

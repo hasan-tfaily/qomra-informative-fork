@@ -42,6 +42,7 @@ async function AboutPage() {
       <ServicesFourSection
         paddingTop={120}
         paddingBottom={30}
+        isAboutUs
         data={aboutUs.data.vision}
       />
       <TestimonialSlider
