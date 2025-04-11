@@ -34,6 +34,7 @@ async function Home9() {
   const posts = await getAllPosts();
   const projects = await getAllProjects();
   const services = await getServicesPage();
+
   return (
     <OkaiLayout>
       <HeroThreeSection
@@ -59,16 +60,17 @@ async function Home9() {
       <ServicesFourSection data={services.data.services} />
       <Suspense fallback={<div>Loading...</div>}>
         <PortfolioSlider
-          projects={projects}
+          projects={services.data.Equipment.image}
           order={["project-30", "project-31", "project-32", "project-20"]}
           paddingTop={0}
+          title={services.data.Equipment.title}
+          description={services.data.Equipment.description}
         />
       </Suspense>
-      <PartnersTwoSection />
+      <PartnersTwoSection images={services.data.Equipment.image} />
       <Suspense fallback={<div>Loading...</div>}>
         <LatestPostsSection posts={posts} />
       </Suspense>
-      <CallToActionTwoSection />
     </OkaiLayout>
   );
 }

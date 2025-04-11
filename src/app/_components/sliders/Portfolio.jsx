@@ -10,7 +10,14 @@ import { useEffect } from "react";
 import { SliderProps } from "@/src/app/_common/sliderProps";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-const PortfolioSlider = ({ projects, order, paddingTop = 0 }) => {
+const PortfolioSlider = ({
+  projects,
+  order,
+  paddingTop = 0,
+  title,
+  description,
+  subtitle,
+}) => {
   let projectsKeys = {};
   let sliderItems = [];
 
@@ -25,7 +32,6 @@ const PortfolioSlider = ({ projects, order, paddingTop = 0 }) => {
   useEffect(() => {
     //ScrollAnimation();
   }, []);
-
   return (
     <>
       {/* portfolio */}
@@ -35,11 +41,11 @@ const PortfolioSlider = ({ projects, order, paddingTop = 0 }) => {
             <div className="col-12 mil-mb90">
               <span
                 className="mil-suptitle mil-accent mil-mb30 mil-up"
-                dangerouslySetInnerHTML={{ __html: Data.subtitle }}
+                dangerouslySetInnerHTML={{ __html: title }}
               />
               <h2
                 className="mil-fs42 mil-up"
-                dangerouslySetInnerHTML={{ __html: Data.title }}
+                dangerouslySetInnerHTML={{ __html: description }}
               />
             </div>
             <div className="col-lg-8">
@@ -48,7 +54,7 @@ const PortfolioSlider = ({ projects, order, paddingTop = 0 }) => {
                 className="swiper-conteiner mil-portfolio-slider mil-c-swipe"
                 style={{ overflow: "visible" }}
               >
-                {sliderItems.map((item, key) => (
+                {projects.map((item, key) => (
                   <SwiperSlide
                     className="swiper-slide"
                     key={`portfolio-slider-item-${key}`}
@@ -57,10 +63,10 @@ const PortfolioSlider = ({ projects, order, paddingTop = 0 }) => {
                       <div className="mil-cover-frame mil-h">
                         <div className="mil-hover-frame">
                           <Image
-                            src={item.image}
+                            src={`http://137.184.197.76:1337${item.url}`}
                             fill
                             sizes="(max-width: 768px) 100vw, 50vw"
-                            alt={item.title}
+                            alt={item.alternativeText}
                             className="mil-scale-img"
                             data-value-1="1"
                             data-value-2="1.25"
