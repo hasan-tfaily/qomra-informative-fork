@@ -6,6 +6,8 @@ import OkaiLayout from "@/src/app/_layouts/OkaiLayout";
 
 import PageBanner from "@/src/app/_components/PageBanner";
 import ContactFormSection from "@/src/app/_components/sections/Contact";
+import dynamic from "next/dynamic";
+import Calendly from "@/src/app/_components/calendly";
 
 export const metadata = {
   title: {
@@ -23,6 +25,10 @@ const ContactPage = () => {
         bgImage={"/img/banners/17.jpg"}
       />
       <ContactFormSection />
+      <div>
+        <h1>Schedule a Meeting</h1>
+        <Calendly />
+      </div>
     </OkaiLayout>
   );
 };
