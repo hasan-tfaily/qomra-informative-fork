@@ -11,6 +11,7 @@ const ShowcasePortfolioSlider = dynamic(
 );
 
 import { getSortedProjectsData } from "@/src/app/_lib/projects";
+import { getStudioPage } from "@/core/repository";
 
 export const metadata = {
   title: {
@@ -21,11 +22,15 @@ export const metadata = {
 
 async function ShowcaseProjects() {
   const projects = await getAllProjects();
+  const studio = await getStudioPage();
+
+  // console.log(studio.data);
 
   return (
     <OkaiLayout header={"transparent"} footer={"transparent"}>
       <Suspense fallback={<div>Loading...</div>}>
         <ShowcasePortfolioSlider
+          data={studio.data}
           projects={projects}
           order={[
             "project-39",

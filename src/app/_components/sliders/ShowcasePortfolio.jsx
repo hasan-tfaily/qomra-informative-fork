@@ -13,6 +13,7 @@ const ShowcasePortfolioSlider = ({
   showContactInLatestSlide = 0,
   contactLineOne,
   contactLineTwo,
+  data,
 }) => {
   let projectsKeys = {};
   let sliderItems = [];
@@ -25,6 +26,7 @@ const ShowcasePortfolioSlider = ({
     sliderItems.push(projectsKeys[order_key]);
   });
 
+  // console.log(data);
   return (
     <>
       {/* portfolio */}
@@ -34,7 +36,7 @@ const ShowcasePortfolioSlider = ({
           className="swiper-container mil-portfolio-fs-slider"
           style={{ overflow: "visible" }}
         >
-          {sliderItems.map((item, key) => (
+          {data.list.map((item, key) => (
             <SwiperSlide
               className="swiper-slide"
               key={`portfolio-fs-slider-item-${key}`}
@@ -47,7 +49,7 @@ const ShowcasePortfolioSlider = ({
                   data-swiper-parallax-opacity="0"
                 >
                   <Image
-                    src={item.image}
+                    src={`http://137.184.197.76:1337${item.image.url}`}
                     fill
                     sizes="(max-width: 768px) 100vw, 75vw"
                     alt={item.title}
@@ -86,8 +88,9 @@ const ShowcasePortfolioSlider = ({
                     <>
                       <h1
                         className="mil-fs68 mil-mb30"
-                        dangerouslySetInnerHTML={{ __html: slidesTitles[key] }}
+                        dangerouslySetInnerHTML={{ __html: item.title }}
                       />
+                      <h4>{item.description}</h4>
                       <Link
                         href={`/projects/${item.id}`}
                         className="mil-btn mil-btn-link mil-c-gone"
