@@ -8,6 +8,7 @@ import OkaiLayout from "@/src/app/_layouts/OkaiLayout";
 import PageBanner from "@/src/app/_components/PageBanner";
 import PricingSection from "@/src/app/_components/sections/Pricing";
 import CallToActionThreeSection from "@/src/app/_components/sections/CallToActionThree";
+import { getPricingPage } from "@/core/repository";
 
 const TestimonialSlider = dynamic(
   () => import("@/src/app/_components/sliders/Testimonial"),
@@ -22,18 +23,21 @@ export const metadata = {
 };
 
 async function PricingPage() {
+  const price = await getPricingPage();
+
   return (
     <OkaiLayout>
       <PageBanner
         pageTitle={"Our pricing"}
         breadTitle={"Pricing"}
-        bgImage={"/img/banners/16.jpg"}
+        bgImage={`http://137.184.197.76:1337${price.data.image.url}`}
       />
       <PricingSection
-        subtitle={"Our plans"}
-        title={"Choose your <br>pricings plans"}
+        subtitle={price.data.description}
+        title={price.data.title}
+        data={price.data.pricing}
       />
-      <TestimonialSlider
+      {/* <TestimonialSlider
         items={[
           {
             name: "Lucas Wolfer",
@@ -56,8 +60,8 @@ async function PricingPage() {
         ]}
         paddingTop={0}
         paddingBottom={120}
-      />
-      <CallToActionThreeSection />
+      /> */}
+      {/* <CallToActionThreeSection /> */}
     </OkaiLayout>
   );
 }

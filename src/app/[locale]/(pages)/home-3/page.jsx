@@ -41,7 +41,6 @@ async function Home3() {
   const events = await getEventsPage();
   const services = await getServicesPage();
 
-  console.log(events.data);
   return (
     <OkaiLayout>
       <HeroSection

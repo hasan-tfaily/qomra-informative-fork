@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import AppData from "@data/app.json";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-
+import whitelogo from "../../../../public/img/Logo/qomrawhitelogo.png";
+import Image from "next/image";
 const HeaderModule = ({ layout }) => {
   const [toggle, setToggle] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState(null);
@@ -42,7 +43,7 @@ const HeaderModule = ({ layout }) => {
           <div className="row mil-aic">
             <div className="col-6">
               <Link href="/" className="mil-logo mil-c-gone">
-                {AppData.header.logoText}
+                <Image src={whitelogo.src} width={110} height={25} alt="logo" />
               </Link>
             </div>
             <div className="col-6 mil-jce mil-aic">

@@ -6,11 +6,10 @@ import { PricingPlans } from "@/src/app/_common/utilits";
 import Data from "@data/sections/pricing.json";
 import Link from "next/link";
 
-const PricingSection = ({ subtitle = "", title = "" }) => {
+const PricingSection = ({ subtitle = "", title = "", data }) => {
   useEffect(() => {
     PricingPlans();
   }, []);
-
   return (
     <>
       {/* prices */}
@@ -39,7 +38,7 @@ const PricingSection = ({ subtitle = "", title = "" }) => {
             </div>
           </div>
           <div className="row">
-            {Data.items.map((item, key) => (
+            {data[0].prices.map((item, key) => (
               <div className="col-md-4 col-sm-6" key={`pricing-item-${key}`}>
                 <div
                   className={
@@ -52,36 +51,29 @@ const PricingSection = ({ subtitle = "", title = "" }) => {
                   <div className="mil-light mil-mb60 mil-accent mil-up">
                     {item.price.before}{" "}
                     <span
-                      className="mil-pricing-table-price mil-fs68"
-                      data-year-price={item.price.valuePerYear}
-                      data-month-price={item.price.value}
+                      className="mil-pricing-table-price pricingSpecial"
+                      data-year-price={item.price}
+                      data-month-price={item.price}
                     >
-                      {item.price.value}
+                      {item.price}
                     </span>
-                    <span className="mil-sup-text">{item.price.after}</span>
+                    {/* <span className="mil-sup-text">{item.price.after}</span> */}
                   </div>
                   <ul className="mil-price-list mil-mb60">
-                    {item.list.map((list_item, list_key) => (
-                      <li
-                        key={`pricing-item-${key}-list-${list_key}`}
-                        className="mil-up"
-                      >
-                        {list_item.value}
-                      </li>
-                    ))}
+                    <p style={{ whiteSpace: "pre-line" }}>
+                      {item.ServicesProvided}
+                    </p>
                   </ul>
-                  <div className="mil-up">
+                  {/* <div className="mil-up">
                     <Link
-                      href={item.button.link}
+                      href={"#"}
                       className={
                         !item.popular
                           ? "mil-btn mil-btn-border mil-c-gone"
                           : "mil-btn mil-c-gone"
                       }
-                    >
-                      {item.button.label}
-                    </Link>
-                  </div>
+                    ></Link>
+                  </div> */}
                 </div>
               </div>
             ))}
