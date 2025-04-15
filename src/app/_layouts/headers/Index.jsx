@@ -4,10 +4,6 @@ import { useState, useEffect } from "react";
 import AppData from "@data/app.json";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
-
-import whitelogo from "../../../../public/img/logo/qomrawhitelogo.png";
-import LanguageSwitcher from "../../_components/languageSwitcher";
 
 const HeaderModule = ({ layout }) => {
   const [toggle, setToggle] = useState(false);
@@ -15,7 +11,7 @@ const HeaderModule = ({ layout }) => {
   const asPath = usePathname();
 
   const isPathActive = (path) => {
-    return asPath === path;
+    return asPath.indexOf(path) !== -1 && asPath === path;
   };
 
   const handleSubMenuClick = (index, e) => {
@@ -24,6 +20,7 @@ const HeaderModule = ({ layout }) => {
   };
 
   useEffect(() => {
+    // close mobile menu
     setToggle(false);
   }, [asPath]);
 
@@ -44,8 +41,8 @@ const HeaderModule = ({ layout }) => {
         <div className="container">
           <div className="row mil-aic">
             <div className="col-6">
-              <Link href={"/"}>
-                <Image src={whitelogo.src} width={110} height={25} alt="logo" />
+              <Link href="/" className="mil-logo mil-c-gone">
+                {AppData.header.logoText}
               </Link>
             </div>
             <div className="col-6 mil-jce mil-aic">
@@ -57,8 +54,10 @@ const HeaderModule = ({ layout }) => {
               </div>
               <div className="mil-buttons-frame">
                 <div
-                  className={`mil-menu-btn ${toggle ? "mil-active" : ""}`}
-                  onClick={menuOpen}
+                  className={`mil-menu-btn mil-c-gone ${
+                    toggle ? "mil-active" : ""
+                  }`}
+                  onClick={() => menuOpen()}
                 >
                   <span></span>
                 </div>
@@ -67,51 +66,50 @@ const HeaderModule = ({ layout }) => {
           </div>
         </div>
       </div>
+      {/* top panel end */}
 
       {/* menu */}
       <div className={`mil-menu-window ${toggle ? "mil-active" : ""}`}>
         <div className="container">
-          <ul className="mil-main-menu">
+          <ul className="mil-main-menu mil-c-gone">
             {AppData.header.menu.map((item, index) => (
               <li
+                className={`menu-item ${
+                  item.children.length > 0 ? "menu-item-has-children" : ""
+                } ${isPathActive(item.link) ? "current-menu-item" : ""}`}
                 key={`header-menu-item-${index}`}
-                className={item.children?.length ? "mil-has-children" : ""}
               >
-                {item.children?.length ? (
-                  <>
-                    <a
-                      href={item.link}
-                      onClick={(e) => handleSubMenuClick(index, e)}
-                      className={isPathActive(item.link) ? "mil-active" : ""}
-                    >
-                      {item.label}
-                    </a>
-                    <ul
-                      className={`mil-submenu ${
-                        activeSubMenu === index ? "mil-active" : ""
-                      }`}
-                    >
-                      {item.children.map((subitem, subIndex) => (
-                        <li key={`submenu-item-${subIndex}`}>
-                          <Link
-                            href={subitem.link}
-                            className={
-                              isPathActive(subitem.link) ? "mil-active" : ""
-                            }
-                          >
-                            {subitem.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                ) : (
-                  <Link
-                    href={item.link}
-                    className={isPathActive(item.link) ? "mil-active" : ""}
+                <Link
+                  href={item.link}
+                  onClick={
+                    item.children.length > 0
+                      ? (e) => handleSubMenuClick(index, e)
+                      : null
+                  }
+                >
+                  {item.label}
+                </Link>
+                {item.children.length > 0 && (
+                  <ul
+                    className={
+                      activeSubMenu === index
+                        ? "sub-menu mil-active"
+                        : "sub-menu"
+                    }
                   >
-                    {item.label}
-                  </Link>
+                    {item.children.map((subitem, subIndex) => (
+                      <li
+                        key={`header-submenu-item-${subIndex}`}
+                        className={
+                          isPathActive(subitem.link)
+                            ? "menu-item current-menu-item"
+                            : "menu-item"
+                        }
+                      >
+                        <Link href={subitem.link}>{subitem.label}</Link>
+                      </li>
+                    ))}
+                  </ul>
                 )}
               </li>
             ))}
@@ -122,8 +120,8 @@ const HeaderModule = ({ layout }) => {
                 <a
                   href={item.link}
                   target="_blank"
-                  rel="noopener noreferrer"
                   title={item.title}
+                  className="mil-c-gone"
                 >
                   <i className={item.icon}></i>
                 </a>
@@ -132,6 +130,7 @@ const HeaderModule = ({ layout }) => {
           </ul>
         </div>
       </div>
+      {/* menu end */}
     </>
   );
 };
