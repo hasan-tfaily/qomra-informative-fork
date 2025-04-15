@@ -5,7 +5,7 @@ const HeroOne = ({
   image,
   title,
   button,
-
+  description, // New description prop
   imgLayout = false,
   rowReverse = false,
 }) => {
@@ -22,9 +22,16 @@ const HeroOne = ({
             <div className="col-12 col-lg-6">
               <div className="mil-banner-text">
                 <h1
-                  className={button ? "mil-fs68 mil-mb60" : "mil-fs68"}
+                  className={button ? "mil-fs68 " : "mil-fs68"}
                   dangerouslySetInnerHTML={{ __html: title }}
                 />
+                {/* Description added here */}
+                {description && (
+                  <h4
+                    className="mil-text-sm mil-mb20"
+                    dangerouslySetInnerHTML={{ __html: description }}
+                  />
+                )}
                 {button !== false && (
                   <Link href={button.link} className="mil-btn mil-c-gone">
                     {button.label}

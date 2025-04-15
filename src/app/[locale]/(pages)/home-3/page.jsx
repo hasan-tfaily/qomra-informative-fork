@@ -14,6 +14,7 @@ import AboutUsSection from "@/src/app/_components/sections/AboutUs";
 import LatestPostsSection from "@/src/app/_components/sections/LatestPosts";
 import CallToActionSection from "@/src/app/_components/sections/CallToAction";
 import CallToActionTwoSection from "@/src/app/_components/sections/CallToActionTwo";
+import { getEventsPage, getServicesPage } from "@/core/repository";
 
 const PortfolioSlider = dynamic(
   () => import("@/src/app/_components/sliders/Portfolio"),
@@ -37,12 +38,16 @@ export const metadata = {
 async function Home3() {
   const posts = await getAllPosts();
   const projects = await getAllProjects();
+  const events = await getEventsPage();
+  const services = await getServicesPage();
 
+  console.log(events.data);
   return (
     <OkaiLayout>
       <HeroSection
         image={{ url: "/img/banners/2.jpg", alt: "banner" }}
-        title={"Hello, my <br>name is Carl."}
+        title={`${events.data.title} `}
+        description={events.data.description}
         button={{ label: "View portfolio", link: "/projects-3" }}
         imgLayout={"out-right"}
       />
@@ -51,8 +56,11 @@ async function Home3() {
       <AboutUsSection />
       <Suspense fallback={<div>Loading...</div>}>
         <PortfolioSlider
-          projects={projects}
-          order={["project-5", "project-3", "project-7", "project-6"]}
+          projects={services.data.Equipment.image}
+          order={["project-30", "project-31", "project-32", "project-20"]}
+          paddingTop={0}
+          title={services.data.Equipment.title}
+          description={services.data.Equipment.description}
         />
       </Suspense>
       <CallToActionSection />
