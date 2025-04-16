@@ -6,7 +6,7 @@ import Link from "next/link";
 import { BackToTop } from "@/src/app/_common/utilits";
 
 import { useEffect } from "react";
-import whitelogo from "../../../../public/img/Logo/qomrawhiteloo.png";
+import whitelogo from "../../../../public/img/Logo/white-logo.png";
 import Image from "next/image";
 const DefaultFooter = () => {
   useEffect(() => {
