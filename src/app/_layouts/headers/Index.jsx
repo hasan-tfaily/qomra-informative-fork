@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import AppData from "@data/app.json";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import whitelogo from "../../../../public/img/Logo/qomrawhitelogo.png";
+import whitelogo from "../../../../public/img/Logo/qomrawhiteloo.png";
 import Image from "next/image";
 const HeaderModule = ({ layout }) => {
   const [toggle, setToggle] = useState(false);
