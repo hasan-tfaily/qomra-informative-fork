@@ -25,12 +25,8 @@ async function BlogCategory({ params }) {
   // First await the params promise
   const { categoryID } = await params;
 
-  console.log("/////////===================");
-  console.log(categoryID); // Now using the destructured value
-
   const blogCategory = await getCatygoryFILTER(categoryID);
   const posts = await getAllPosts();
-  console.log(blogCategory);
   return (
     <OkaiLayout>
       <div className="mil-p-240-120 mil-992-p-150-120">
