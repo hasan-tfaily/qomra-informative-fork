@@ -4,12 +4,11 @@ import BlogItem from "@/src/app/_components/blog/BlogItem";
 
 import { useEffect, useState, useCallback } from "react";
 
-const PaginatedBlogPosts = ({ items, limit, columns = 2 }) => {
+const PaginatedBlogPosts = ({ items, limit, columns = 2, blogs }) => {
   const [data, setData] = useState(items.slice(0, limit));
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [loadingText, setLoadingText] = useState("Load more");
-
   const loadMoreData = async () => {
     setIsLoading(true);
     let newPostsData = items.slice(page * limit, (page + 1) * limit);
@@ -45,7 +44,7 @@ const PaginatedBlogPosts = ({ items, limit, columns = 2 }) => {
     <>
       <div className="container mil-blog-container">
         <div className="row">
-          {data.map((item, key) => (
+          {blogs.map((item, key) => (
             <div
               className={columns == 3 ? "col-lg-4" : "col-lg-6"}
               key={`blog-item-${key}`}
@@ -53,7 +52,7 @@ const PaginatedBlogPosts = ({ items, limit, columns = 2 }) => {
               <BlogItem item={item} index={key} />
             </div>
           ))}
-          {isLoading && (
+          {/* {isLoading && (
             <div className="col-12">
               <div className="mil-more-loader mil-mt-60 mil-up">
                 <svg
@@ -71,7 +70,7 @@ const PaginatedBlogPosts = ({ items, limit, columns = 2 }) => {
                 </p>
               </div>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </>

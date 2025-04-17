@@ -10,7 +10,8 @@ import {
   getAllCategoriesIds,
   getCategoryData,
 } from "@/src/app/_lib/categories";
-import { getCategoryPosts } from "@/src/app/_lib/posts";
+import { getCategoryPosts, getSortedPostsData } from "@/src/app/_lib/posts";
+import { getCatygoryFILTER } from "@/core/repository";
 
 export async function generateMetadata({ params }) {
   const categoryData = await getSingleCategoryData(params);
@@ -21,16 +22,24 @@ export async function generateMetadata({ params }) {
 }
 
 async function BlogCategory({ params }) {
-  const posts = await getAllPosts(await params);
-  const categoryData = await getSingleCategoryData(await params);
+  // First await the params promise
+  const { categoryID } = await params;
 
+  console.log("/////////===================");
+  console.log(categoryID); // Now using the destructured value
+
+  const blogCategory = await getCatygoryFILTER(categoryID);
+  const posts = await getAllPosts();
+  console.log(blogCategory);
   return (
     <OkaiLayout>
-      {/* blog */}
       <div className="mil-p-240-120 mil-992-p-150-120">
-        <PaginatedBlog items={posts} limit={AppData.settings.perPage} />
+        <PaginatedBlog
+          blogs={blogCategory.data}
+          items={posts.posts}
+          limit={AppData.settings.perPage}
+        />
       </div>
-      {/* blog end */}
     </OkaiLayout>
   );
 }
@@ -51,12 +60,10 @@ async function getSingleCategoryData(params) {
   }
 }
 
-async function getAllPosts(params) {
-  const categoryPosts = await getCategoryPosts((await params).id);
+async function getAllPosts() {
+  const posts = getSortedPostsData();
 
-  if (!categoryPosts.length) {
-    notFound();
-  }
-
-  return categoryPosts;
+  return {
+    posts: posts,
+  };
 }

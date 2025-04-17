@@ -22,14 +22,18 @@ import Date from "@/src/app/_lib/date";
 
 import Link from "next/link";
 import Image from "next/image";
+import { getBlogDetailsPage } from "@/core/repository";
+import DateStringConverter from "@/src/app/_components/blog/data";
 
 async function PostsDetail({ params }) {
-  const postData = await getSinglePostData(await params);
-  const authorData = await getSingleAuthorData(
-    postData.author.toLowerCase().replace(" ", "-")
-  );
+  // const postData = await getSinglePostData(await params);
+  // const authorData = await getSingleAuthorData(
+  //   postData.author.toLowerCase().replace(" ", "-")
+  // );
   const posts = await getAllPosts();
-  const categories = await getAllCategories();
+  // const categories = await getAllCategories();
+
+  const blog = await getBlogDetailsPage(params.id);
 
   const comments = [
     {
@@ -73,6 +77,7 @@ async function PostsDetail({ params }) {
       ],
     },
   ];
+  // console.log(blog.data[0].Gallery);
 
   return (
     <OkaiLayout>
@@ -81,37 +86,33 @@ async function PostsDetail({ params }) {
         <div className="container">
           <div className="row mil-jcb">
             <div className="col-lg-6">
-              <h1 className="mil-fs42 mil-mb60 mil-up">{postData.title}</h1>
+              <h1 className="mil-fs42 mil-mb60 mil-up">{blog.data[0].title}</h1>
               <div className="mil-post-details mil-text mil-mb90 mil-up">
-                <span className="mil-item">
-                  {postData.categories.map((item, key) => (
+                {/* <span className="mil-item">
+                  {blog.data[0].category.map((item, key) => (
                     <span key={`post-category-item-${key}`}>
-                      <Link
-                        href={`/blog/category/${item
-                          .toLowerCase()
-                          .replace(" ", "-")}`}
-                      >
-                        {item}
+                      <Link href={`/blog/category/${item.title}`}>
+                        {item.title}
                       </Link>
-                      {key + 1 !== postData.categories.length && (
+                      {key + 1 !== blog.data[0].category.length && (
                         <span>, </span>
                       )}
                     </span>
                   ))}
-                </span>
-                <span className="mil-sep">/</span>
+                </span> */}
+                {/* <span className="mil-sep">/</span> */}
                 <span className="mil-item">
-                  <Date dateString={postData.date} />
+                  <DateStringConverter dateStr={blog.data[0].date} />
                 </span>
                 <span className="mil-sep">/</span>
                 <span className="mil-item">
                   by{" "}
                   <Link
-                    href={`/blog/author/${postData.author
+                    href={`/blog/author/${blog.data[0].author
                       .toLowerCase()
                       .replace(" ", "-")}`}
                   >
-                    {authorData.name}
+                    {blog.data[0].author}
                   </Link>
                 </span>
               </div>
@@ -119,11 +120,11 @@ async function PostsDetail({ params }) {
             <div className="col-12">
               <div className="mil-just-image mil-h mil-shortened mil-mb90 mil-up">
                 <Image
-                  src={postData.image}
+                  src={`http://137.184.197.76:1337${blog.data[0].coverImage.url}`}
                   fill
                   sizes="100vw"
                   priority
-                  alt={postData.title}
+                  alt={blog.data[0].title}
                   className="mil-scale-img"
                   data-value-1="1"
                   data-value-2="1.25"
@@ -131,23 +132,25 @@ async function PostsDetail({ params }) {
               </div>
             </div>
             <div className="col-lg-7 mil-mb90">
-              <div
-                className="mil-text mil-mb90 mil-up"
-                dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
-              />
+              <div className="mil-text mil-mb90 mil-up">
+                {blog.data[0].paragraph.map((item, index) => (
+                  <div key={index}>
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                  </div>
+                ))}
+              </div>
 
               <div className="mil-tags mil-mb60 mil-up">
                 <p>Tags:</p>
                 <ul>
-                  {postData.tags.map((item, key) => (
+                  {blog.data[0].category.map((item, key) => (
                     <li key={`post-tag-item-${key}`}>
                       <Link
-                        href={`/blog/tag/${item
-                          .toLowerCase()
-                          .replace(" ", "-")}`}
+                        href={`/blog/tag/${item.title}`}
                         className="mil-c-gone"
                       >
-                        {item}
+                        {item.title}
                       </Link>
                     </li>
                   ))}
@@ -156,14 +159,15 @@ async function PostsDetail({ params }) {
 
               <ShareButtonsSection />
 
-              <PostRelated posts={posts} currentPost={postData} />
+              {/* <PostRelated posts={posts} currentPost={postData} />
 
-              <PostComments items={comments} />
+              <PostComments items={comments} /> */}
             </div>
             <div className="col-lg-4">
               <RecentPosts items={posts} numOfItems={3} />
 
               <InstagramGallery
+                photos={blog.data[0].Gallery}
                 items={[
                   {
                     image: "/img/blog/publication/instagram/1.jpg",
@@ -188,7 +192,7 @@ async function PostsDetail({ params }) {
                 ]}
               />
 
-              <BlogCategories items={categories} />
+              <BlogCategories items={blog.data[0].category} />
             </div>
           </div>
         </div>

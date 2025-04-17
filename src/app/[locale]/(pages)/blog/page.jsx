@@ -5,6 +5,7 @@ import AppData from "@data/app.json";
 import OkaiLayout from "@/src/app/_layouts/OkaiLayout";
 
 import { getSortedPostsData } from "@/src/app/_lib/posts";
+import { getBlogsPage } from "@/core/repository";
 
 export const metadata = {
   title: {
@@ -15,12 +16,14 @@ export const metadata = {
 
 async function Blog() {
   const postsData = await getAllPosts();
-
+  const blogs = await getBlogsPage();
+  // console.log(blogs.data);
   return (
     <OkaiLayout>
       {/* blog */}
       <div className="mil-p-240-120 mil-992-p-150-120">
         <PaginatedBlog
+          blogs={blogs.data}
           items={postsData.posts}
           limit={AppData.settings.perPage}
         />

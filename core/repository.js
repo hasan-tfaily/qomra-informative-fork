@@ -6,6 +6,11 @@ const SERVICES_URL = `/api/services-page?populate%5B0%5D=servicesHeaderSection&p
 const STUDIO_URL = `/api/studio-gallery?populate%5B0%5D=list&populate%5B1%5D=list.image`;
 const EVENTS_URL = `/api/events-and-workshop?populate%5B0%5D=whatWeDo&populate%5B1%5D=whatWeDo.image&populate%5B2%5D=upcoming&populate%5B3%5D=upcoming.images`;
 const PRICE_URL = `/api/pricing?populate%5B0%5D=image&populate%5B1%5D=pricing&populate%5B2%5D=pricing.prices`;
+const BLOGLIST_URL = `/api/blogs?populate%5B0%5D=coverImage`;
+const CATYFILTER = `/api/blogs?populate=coverImage&filters[category][title][$eq]=`;
+
+const BLOG_URL = `/api/blogs?filters[documentId][$eq]=`;
+
 const token = `Bearer bb3e1343a51f3bd53340b17ddde2a4df6c19192212173f51b0e7312a6b0289ab1fbdd9da9c6c16de4bac74418048152eb6a7ade5ff8ef6987e412e449efda5e20e365218dee516e8e797b77c45f7ba9c97892f5c27c3e74cfe3633b182621d4cf5f805f8ddb139f2ebe1b48e320340d5f52dc56c58b165bc37d2cdf2719dfa0b`;
 
 apiService.setToken(token);
@@ -77,6 +82,46 @@ export const getEventsPage = async (locale = "en") => {
 export const getPricingPage = async (locale = "en") => {
   try {
     const url = addQueryParam(PRICE_URL, "locale", locale);
+    const response = await apiService.get(url, null, {
+      next: { revalidate: 5000 },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching home page data:", error);
+    throw error;
+  }
+};
+export const getBlogsPage = async (locale = "en") => {
+  try {
+    const url = addQueryParam(BLOGLIST_URL, "locale", locale);
+    const response = await apiService.get(url, null, {
+      next: { revalidate: 5000 },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching home page data:", error);
+    throw error;
+  }
+};
+
+export const getBlogDetailsPage = async (documentID, locale = "en") => {
+  try {
+    let url = `${BLOG_URL}${documentID}&populate%5B0%5D=coverImage&populate%5B1%5D=paragraph&populate%5B2%5D=Gallery&populate%5B3%5D=category`;
+    url = addQueryParam(url, "locale", locale);
+    const response = await apiService.get(url, null, {
+      next: { revalidate: 5000 },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching home page data:", error);
+    throw error;
+  }
+};
+export const getCatygoryFILTER = async (tag, locale = "en") => {
+  try {
+    console.log(tag);
+    const url = addQueryParam(`${CATYFILTER}${tag}`, "locale", locale);
+    console.log(url);
     const response = await apiService.get(url, null, {
       next: { revalidate: 5000 },
     });
