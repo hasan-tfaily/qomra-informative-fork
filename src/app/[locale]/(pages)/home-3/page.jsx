@@ -41,25 +41,26 @@ async function Home3() {
   const events = await getEventsPage();
   const services = await getServicesPage();
 
+console.log(events.data.upcoming)
   return (
     <OkaiLayout>
       <HeroSection
-        image={{ url: "/img/banners/2.jpg", alt: "banner" }}
+        image={{ url:`http://137.184.197.76:1337${events.data.coverImage.url}` , alt: "banner" }}
         title={`${events.data.title} `}
         description={events.data.description}
         button={{ label: "View portfolio", link: "/projects-3" }}
         imgLayout={"out-right"}
       />
 
-      <ServicesTwoSection />
+      <ServicesTwoSection data={events.data.whatWeDo}/>
       <AboutUsSection />
       <Suspense fallback={<div>Loading...</div>}>
         <PortfolioSlider
-          projects={services.data.Equipment.image}
+          projects={events.data.upcoming.images}
           order={["project-30", "project-31", "project-32", "project-20"]}
           paddingTop={0}
-          title={services.data.Equipment.title}
-          description={services.data.Equipment.description}
+          title={events.data.upcoming.title}
+          description={events.data.upcoming.subtitle}
         />
       </Suspense>
       <CallToActionSection />
