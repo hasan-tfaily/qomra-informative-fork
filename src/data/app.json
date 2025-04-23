@@ -114,23 +114,33 @@
     ],
     "backLabel": "Back to top"
   },
-  "social": [
-    {
-      "link": "https://facebook.com",
-      "icon": "fab fa-facebook-f",
-      "title": "Facebook"
-    },
-    {
-      "link": "https://behance.com",
-      "icon": "fab fa-behance",
-      "title": "Behance"
-    },
-    {
-      "link": "https://instagram.com",
-      "icon": "fab fa-instagram",
-      "title": "Instagram"
-    }
-  ],
+"social": [
+  {
+    "link": "https://www.facebook.com/qomra.studios",
+    "icon": "fab fa-facebook-f",
+    "title": "Facebook"
+  },
+  {
+    "link": "https://www.instagram.com/qomra.studios/",
+    "icon": "fab fa-instagram",
+    "title": "Instagram"
+  },
+  {
+    "link": "https://www.tiktok.com/@qomra.studios",
+    "icon": "fab fa-tiktok",
+    "title": "TikTok"
+  },
+  {
+    "link": "https://www.youtube.com/@QomraStudios",
+    "icon": "fab fa-youtube",
+    "title": "YouTube"
+  },
+  {
+    "link": "https://www.linkedin.com/company/qomra-studios/",
+    "icon": "fab fa-linkedin-in",
+    "title": "LinkedIn"
+  }
+],
   "projects": {
     "categories": [
       {
