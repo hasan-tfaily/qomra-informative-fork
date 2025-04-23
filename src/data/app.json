@@ -1,6 +1,6 @@
 {
   "settings": {
-    "siteName": "Okai",
+    "siteName": "Qomra",
     "siteDescription": "Creative Portfolio Agency React Next.JS Template",
     "formspreeURL": "https://formspree.io/f/your_api_key",
     "mailchimp": {
@@ -10,7 +10,7 @@
     "perPage": 6
   },
   "header": {
-    "logoText": "Okai",
+    "logoText": "Qomra",
     "contact": {
       "label": "Phone:",
       "value": "+961 03 67 99 80"
@@ -75,9 +75,9 @@
     ]
   },
   "footer": {
-    "logoText": "Okai",
-    "description": "At Okai we care about each client and each person who works with us and makes great projects possible",
-    "copy": "© 2024 Okai Agency. Developed by bslthemes",
+    "logoText": "Qomra",
+    "description": "At Qomra we care about each client and each person who works with us and makes great projects possible",
+    "copy": "© 2024 Qomra Agency. Developed by bslthemes",
     "menuTitle": "Menu",
     "menu": [
       {
