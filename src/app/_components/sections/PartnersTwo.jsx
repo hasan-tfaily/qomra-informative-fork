@@ -1,4 +1,5 @@
 import Data from "@data/sections/partners-2";
+import Image from "next/image";
 
 const PartnersTwoSection = ({
   title = false,
@@ -23,9 +24,11 @@ const PartnersTwoSection = ({
             {images.map((item, key) => (
               <div className="col-md-3 mil-mb30" key={`partners2-item-${key}`}>
                 <div className="mil-partner-card">
-                  <img
+                  <Image
                     src={`http://137.184.197.76:1337${item.url}`}
                     alt={item.alternativeText}
+                    width={200}
+                    height={100}
                     className="mil-brand"
                   />
                 </div>
