@@ -119,9 +119,7 @@ export const getBlogDetailsPage = async (documentID, locale = "en") => {
 };
 export const getCatygoryFILTER = async (tag, locale = "en") => {
   try {
-    console.log(tag);
     const url = addQueryParam(`${CATYFILTER}${tag}`, "locale", locale);
-    console.log(url);
     const response = await apiService.get(url, null, {
       next: { revalidate: 5000 },
     });
