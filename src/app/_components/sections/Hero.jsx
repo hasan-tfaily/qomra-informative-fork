@@ -52,7 +52,7 @@ const HeroOne = ({
                   fill
                   sizes="(max-width: 768px) 100vw, 80vw"
                   priority
-                  alt={image.alt}
+                  alt={"qomra"}
                   className="mil-scale-img"
                   data-value-1=".75"
                   data-value-2="1.11"
