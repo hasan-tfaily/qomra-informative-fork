@@ -14,7 +14,11 @@ import AboutUsSection from "@/src/app/_components/sections/AboutUs";
 import LatestPostsSection from "@/src/app/_components/sections/LatestPosts";
 import CallToActionSection from "@/src/app/_components/sections/CallToAction";
 import CallToActionTwoSection from "@/src/app/_components/sections/CallToActionTwo";
-import { getEventsPage, getServicesPage } from "@/core/repository";
+import {
+  getBlogsPage,
+  getEventsPage,
+  getServicesPage,
+} from "@/core/repository";
 
 const PortfolioSlider = dynamic(
   () => import("@/src/app/_components/sliders/Portfolio"),
@@ -37,23 +41,23 @@ export const metadata = {
 
 async function Home3() {
   const posts = await getAllPosts();
-  const projects = await getAllProjects();
   const events = await getEventsPage();
-  const services = await getServicesPage();
-
-console.log(events.data.upcoming)
+  const blogs = await getBlogsPage();
   return (
     <OkaiLayout>
       <HeroSection
-        image={{ url:`http://137.184.197.76:1337${events.data.coverImage.url}` , alt: "banner" }}
+        image={{
+          url: `http://137.184.197.76:1337${events.data.coverImage.url}`,
+          alt: "banner",
+        }}
         title={`${events.data.title} `}
         description={events.data.description}
         button={{ label: "View portfolio", link: "/projects-3" }}
         imgLayout={"out-right"}
       />
 
-      <ServicesTwoSection data={events.data.whatWeDo}/>
-      <AboutUsSection />
+      <ServicesTwoSection data={events.data.whatWeDo} />
+      <AboutUsSection data={events.data.upcomingEvent} />
       <Suspense fallback={<div>Loading...</div>}>
         <PortfolioSlider
           projects={events.data.upcoming.images}
@@ -63,7 +67,7 @@ console.log(events.data.upcoming)
           description={events.data.upcoming.subtitle}
         />
       </Suspense>
-      <CallToActionSection />
+      {/* <CallToActionSection />
       <TestimonialSlider
         items={[
           {
@@ -85,11 +89,11 @@ console.log(events.data.upcoming)
             text: "They have the best customer service. The project is also incredibly flexible and easy to use and explore. The user interface is intuitive and user-friendly. I am glad to have met this amazing team!",
           },
         ]}
-      />
+      /> */}
       <Suspense fallback={<div>Loading...</div>}>
-        <LatestPostsSection posts={posts} />
+        <LatestPostsSection posts={posts} blogs={blogs.data} />
       </Suspense>
-      <CallToActionTwoSection />
+      {/* <CallToActionTwoSection /> */}
     </OkaiLayout>
   );
 }

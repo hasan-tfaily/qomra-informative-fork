@@ -11,6 +11,7 @@ const AboutUsSection = ({
   paddingTop = 0,
   paddingBottom = 120,
   lightText = false,
+  data,
 }) => {
   return (
     <>
@@ -23,13 +24,13 @@ const AboutUsSection = ({
                 <span
                   className="mil-suptitle mil-accent mil-mb30 mil-up"
                   dangerouslySetInnerHTML={{
-                    __html: subtitle ? subtitle : Data.subtitle,
+                    __html: subtitle ? subtitle : data.subtitle,
                   }}
                 />
                 <h2
                   className="mil-fs42 mil-mb30 mil-up"
                   dangerouslySetInnerHTML={{
-                    __html: title ? title : Data.title,
+                    __html: title ? title : data.title,
                   }}
                 />
                 <p
@@ -39,7 +40,7 @@ const AboutUsSection = ({
                       : "mil-text mil-fs16 mil-mb30 mil-up"
                   }
                   dangerouslySetInnerHTML={{
-                    __html: description,
+                    __html: data.description,
                   }}
                 />
                 <div className="mil-up">
@@ -55,7 +56,7 @@ const AboutUsSection = ({
             <div className="col-lg-7 mil-about-image-frame">
               <div className="mil-about-img mil-out-right mil-up">
                 <Image
-                  src={image ? image : Data.image.url}
+                  src={`http://137.184.197.76:1337${data.image.url}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 75vw"
                   alt={Data.image.alt}

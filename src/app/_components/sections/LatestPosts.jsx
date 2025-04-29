@@ -2,8 +2,14 @@ import Data from "@data/sections/latest-posts.json";
 import Date from "@/src/app/_lib/date";
 import Link from "next/link";
 import Image from "next/image";
+import DateStringConverter from "../blog/data";
 
-const LatestPostsSection = ({ posts, paddingTop = 0, paddingBottom = 90 }) => {
+const LatestPostsSection = ({
+  posts,
+  paddingTop = 0,
+  paddingBottom = 90,
+  blogs,
+}) => {
   return (
     <>
       {/* blog */}
@@ -16,7 +22,7 @@ const LatestPostsSection = ({ posts, paddingTop = 0, paddingBottom = 90 }) => {
               </span>
               <h2 className="mil-fs42 mil-up">{Data.title}</h2>
             </div>
-            {posts.slice(0, Data.numOfItems).map((item, key) => (
+            {blogs.map((item, key) => (
               <div className="col-lg-6" key={`latest-posts-item-${key}`}>
                 <Link
                   href={`/blog/${item.id}`}
@@ -25,7 +31,7 @@ const LatestPostsSection = ({ posts, paddingTop = 0, paddingBottom = 90 }) => {
                   <div className="mil-card-cover mil-up">
                     <div className="mil-hover-frame">
                       <Image
-                        src={item.image}
+                        src={`http://137.184.197.76:1337${item.coverImage.url}`}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
                         alt={item.title}
@@ -40,7 +46,7 @@ const LatestPostsSection = ({ posts, paddingTop = 0, paddingBottom = 90 }) => {
                     {item.title}
                   </h4>
                   <p className="mil-soft mil-up">
-                    <Date dateString={item.date} />
+                    <DateStringConverter dateString={item.date} />
                   </p>
                 </Link>
               </div>
