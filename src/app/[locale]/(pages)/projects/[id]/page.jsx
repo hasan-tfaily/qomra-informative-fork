@@ -158,7 +158,10 @@ async function ProjectDetail({ params }) {
                     <span className="mil-suptitle mil-accent mil-up">
                       {services.data[0].ourServicce.title}
                     </span>
-                    <h6 className="mil-fs42 mil-mb30 mil-up">
+                    <h6
+                      className="mil-fs42 mil-mb30 mil-up"
+                      style={{ fontSize: "30px" }}
+                    >
                       {services.data[0].ourServicce.description}
                     </h6>
                   </div>
