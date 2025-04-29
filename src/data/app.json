@@ -109,38 +109,38 @@
       },
       {
         "label": "Address",
-        "value": "300 St. Mary's L, Suite 8060, Houston,<br> TX 77079, Estados Unidos"
+        "value": "Beirut, Bir Hassan, Moroccan Embassy St."
       }
     ],
     "backLabel": "Back to top"
   },
-"social": [
-  {
-    "link": "https://www.facebook.com/qomra.studios",
-    "icon": "fab fa-facebook-f",
-    "title": "Facebook"
-  },
-  {
-    "link": "https://www.instagram.com/qomra.studios/",
-    "icon": "fab fa-instagram",
-    "title": "Instagram"
-  },
-  {
-    "link": "https://www.tiktok.com/@qomra.studios",
-    "icon": "fab fa-tiktok",
-    "title": "TikTok"
-  },
-  {
-    "link": "https://www.youtube.com/@QomraStudios",
-    "icon": "fab fa-youtube",
-    "title": "YouTube"
-  },
-  {
-    "link": "https://www.linkedin.com/company/qomra-studios/",
-    "icon": "fab fa-linkedin-in",
-    "title": "LinkedIn"
-  }
-],
+  "social": [
+    {
+      "link": "https://www.facebook.com/qomra.studios",
+      "icon": "fab fa-facebook-f",
+      "title": "Facebook"
+    },
+    {
+      "link": "https://www.instagram.com/qomra.studios/",
+      "icon": "fab fa-instagram",
+      "title": "Instagram"
+    },
+    {
+      "link": "https://www.tiktok.com/@qomra.studios",
+      "icon": "fab fa-tiktok",
+      "title": "TikTok"
+    },
+    {
+      "link": "https://www.youtube.com/@QomraStudios",
+      "icon": "fab fa-youtube",
+      "title": "YouTube"
+    },
+    {
+      "link": "https://www.linkedin.com/company/qomra-studios/",
+      "icon": "fab fa-linkedin-in",
+      "title": "LinkedIn"
+    }
+  ],
   "projects": {
     "categories": [
       {
