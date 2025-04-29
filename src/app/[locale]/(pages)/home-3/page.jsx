@@ -57,7 +57,10 @@ async function Home3() {
       />
 
       <ServicesTwoSection data={events.data.whatWeDo} />
-      <AboutUsSection data={events.data.upcomingEvent} />
+      <AboutUsSection
+        data={events.data.upcomingEvent}
+        description={events.data.upcomingEvent.description}
+      />
       <Suspense fallback={<div>Loading...</div>}>
         <PortfolioSlider
           projects={events.data.upcoming.images}
