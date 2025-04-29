@@ -4,6 +4,7 @@ import Data from "@data/sections/services-4.json";
 import { useEffect } from "react";
 import { Accordion } from "@/src/app/_common/utilits";
 import Image from "next/image";
+import Link from "next/link";
 
 const ServicesFourSection = ({
   paddingTop = 0,
@@ -12,6 +13,7 @@ const ServicesFourSection = ({
   reverse = false,
   heading = true,
   data,
+  services,
   isAboutUs = false, // New prop added
 }) => {
   useEffect(() => {
@@ -52,7 +54,7 @@ const ServicesFourSection = ({
                   </div>
                 ) : (
                   /* Regular version - multiple accordion items */
-                  content.service.map((item, key) => (
+                  services.map((item, key) => (
                     <div
                       className="mil-accordion-group mil-up"
                       key={`services4-item-${key}`}
@@ -62,7 +64,12 @@ const ServicesFourSection = ({
                         <span className="mil-accordion-icon"></span>
                       </div>
                       <div className="mil-accordion-content">
-                        <p className="mil-text">{item.description}</p>
+                        <p className="mil-text">
+                          {item.description}{" "}
+                          <Link href={`/projects/${item.documentId}`}>
+                            see details
+                          </Link>
+                        </p>
                       </div>
                     </div>
                   ))

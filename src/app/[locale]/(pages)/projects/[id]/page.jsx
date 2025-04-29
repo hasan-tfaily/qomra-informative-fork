@@ -13,6 +13,7 @@ import ShareButtonsSection from "@/src/app/_components/ShareButtons";
 
 import Link from "next/link";
 import Image from "next/image";
+import { getServicesDetails } from "@/core/repository";
 
 export async function generateMetadata({ params }) {
   const postData = await getSingleProjectData(await params);
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }) {
 async function ProjectDetail({ params }) {
   const postData = await getSingleProjectData(params);
   const projects = await getAllProjects();
-
+  const services = await getServicesDetails(params);
   //prev next navigation
   let prev = { id: 0, key: 0, image: "", title: "" };
   let next = { id: 0, key: 0, image: "", title: "" };
@@ -78,87 +79,93 @@ async function ProjectDetail({ params }) {
       {/* project */}
       <div className="mil-p-240-120 mil-992-p-150-120">
         <div className="container">
-          {postData.gallery !== undefined && (
-            <>
-              {postData.gallery.map((item, key) => (
-                <div
-                  className={`mil-just-image mil-h mil-shortened mil-mb${
-                    key + 1 == postData.gallery.length ? "120" : "30"
-                  } mil-up`}
-                  key={`project-gallery-item-${key}`}
-                >
-                  <Image
-                    src={item.image}
-                    fill
-                    sizes="100vw"
-                    alt={item.alt}
-                    className="mil-scale-img"
-                    data-value-1="1"
-                    data-value-2="1.25"
-                  />
-                </div>
-              ))}
-            </>
-          )}
+          <>
+            <div
+              className={`mil-just-image mil-h mil-shortened mil-mb${
+                0 + 1 == 2 ? "120" : "30"
+              } mil-up`}
+              key={`project-gallery-item-${0}`}
+            >
+              <Image
+                src={`http://137.184.197.76:1337${services.data[0].coverImage.url}`}
+                fill
+                sizes="100vw"
+                alt={"hello"}
+                className="mil-scale-img"
+                data-value-1="1"
+                data-value-2="1.25"
+              />
+            </div>
+            <div
+              className={`mil-just-image mil-h mil-shortened mil-mb${
+                1 + 1 == 2 ? "120" : "30"
+              } mil-up`}
+              key={`project-gallery-item-${1}`}
+            >
+              <Image
+                src={`http://137.184.197.76:1337${services.data[0].aboutService[0].image.url}`}
+                fill
+                sizes="100vw"
+                alt={"hello"}
+                className="mil-scale-img"
+                data-value-1="1"
+                data-value-2="1.25"
+              />
+            </div>
+          </>
+
           <div className="row mil-jcb">
             <div className="col-lg-7">
               <h2
                 className="mil-fs42 mil-mb60 mil-up"
-                dangerouslySetInnerHTML={{ __html: postData.description.title }}
+                dangerouslySetInnerHTML={{
+                  __html: services.data[0].aboutService[0].title,
+                }}
               />
               <div
                 className="mil-text mil-mb60 mil-up"
                 dangerouslySetInnerHTML={{
-                  __html: postData.description.content,
+                  __html: services.data[0].aboutService[0].description,
                 }}
               />
 
               <ShareButtonsSection />
             </div>
-            <div className="col-lg-4 mil-mb120">
-              {postData.details.items.map((item, key) => (
-                <div
-                  className="mil-mb30 mil-up"
-                  key={`project-details-item-${key}`}
-                >
-                  <h5 className="mil-fs16 mil-mb15">{item.label}</h5>
-                  <p dangerouslySetInnerHTML={{ __html: item.value }} />
+            <div className="col-lg-4 mil-mb120"></div>
+          </div>
+
+          <div className="row mil-jce">
+            <div className="col-lg-10">
+              <Link
+                href={`#`}
+                className="row flex-sm-row-reverse mil-jcb mil-aic mil-c-next"
+              >
+                <div className="col-lg-7 mil-project-cover-frame">
+                  <div className="mil-cover-img mil-left mil-up">
+                    <Image
+                      src={`http://137.184.197.76:1337${services.data[0].ourServicce.image.url}`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      alt={"Qomra"}
+                      className="mil-scale-img"
+                      data-value-1="1"
+                      data-value-2="1.25"
+                    />
+                  </div>
                 </div>
-              ))}
+                <div className="col-lg-5 mil-relative">
+                  <div className="mil-project-text">
+                    <span className="mil-suptitle mil-accent mil-up">
+                      {services.data[0].ourServicce.title}
+                    </span>
+                    <h6 className="mil-fs42 mil-mb30 mil-up">
+                      {services.data[0].ourServicce.description}
+                    </h6>
+                  </div>
+                </div>
+              </Link>
             </div>
           </div>
-          {next.id != 0 && (
-            <div className="row mil-jce">
-              <div className="col-lg-10">
-                <Link
-                  href={`/projects/${next.id}`}
-                  className="row flex-sm-row-reverse mil-jcb mil-aic mil-c-next"
-                >
-                  <div className="col-lg-7 mil-project-cover-frame">
-                    <div className="mil-cover-img mil-left mil-up">
-                      <Image
-                        src={next.image}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        alt={next.title}
-                        className="mil-scale-img"
-                        data-value-1="1"
-                        data-value-2="1.25"
-                      />
-                    </div>
-                  </div>
-                  <div className="col-lg-5 mil-relative">
-                    <div className="mil-project-text">
-                      <span className="mil-suptitle mil-accent mil-up">
-                        Next project
-                      </span>
-                      <h2 className="mil-fs42 mil-mb30 mil-up">{next.title}</h2>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            </div>
-          )}
         </div>
       </div>
       {/* project end */}
@@ -174,7 +181,7 @@ export async function generateStaticParams() {
 }
 
 async function getSingleProjectData(params) {
-  const postData = await getProjectData((await params).id);
+  const postData = await getProjectData(`project-21`);
 
   if (!postData) {
     notFound();
