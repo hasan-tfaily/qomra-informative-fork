@@ -8,6 +8,7 @@ import PageBanner from "@/src/app/_components/PageBanner";
 import ContactFormSection from "@/src/app/_components/sections/Contact";
 import dynamic from "next/dynamic";
 import Calendly from "@/src/app/_components/calendly";
+import Map from "@/src/app/_components/maps/map";
 
 export const metadata = {
   title: {
@@ -24,6 +25,7 @@ const ContactPage = () => {
         breadTitle={"Contact"}
         bgImage={"/img/banners/17.jpg"}
       />
+      <Map address="Qomra Studios, Beirut, Lebanon" />
       <ContactFormSection />
       <div>
         <h1>Schedule a Meeting</h1>
