@@ -59,6 +59,10 @@
           {
             "label": "Contact",
             "link": "/contact"
+          },
+          {
+            "label": "Booking",
+            "link": "/booking"
           }
         ]
       },
@@ -95,6 +99,10 @@
       {
         "label": "Contact",
         "link": "/contact"
+      },
+      {
+        "label": "Booking",
+        "link": "/booking"
       }
     ],
     "contactTitle": "Contact Us",

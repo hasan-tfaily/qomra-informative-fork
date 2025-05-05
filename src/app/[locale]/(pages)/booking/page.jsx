@@ -21,14 +21,20 @@ const ContactPage = () => {
   return (
     <OkaiLayout>
       <PageBanner
-        pageTitle={"Contact us"}
-        breadTitle={"Contact"}
+        pageTitle={"Booking"}
+        breadTitle={"booking"}
         bgImage={"/img/banners/17.jpg"}
       />
-      <Map address="Qomra Studios, Beirut, Lebanon" />
       <ContactFormSection />
-      <div>
-        <h1>Schedule a Meeting</h1>
+      <div className="center ">
+        <h1
+          style={{
+            textAlign: "center",
+            padding: "2rem 0" /* Adjust the values as needed */,
+          }}
+        >
+          Schedule a Meeting
+        </h1>
         <Calendly />
       </div>
     </OkaiLayout>
