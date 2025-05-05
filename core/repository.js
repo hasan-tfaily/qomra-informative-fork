@@ -11,6 +11,7 @@ const CATYFILTER = `/api/blogs?populate=coverImage&filters[category][title][$eq]
 const SERVICES = `/api/service-details?`;
 const BLOG_URL = `/api/blogs?filters[documentId][$eq]=`;
 const SERVICE_DETAILS = `/api/service-details?filters[documentId][$eq]=`;
+const CONTACT_US_URL = `/api/contact-us?populate%5B0%5D=coverImage`;
 
 const token = `Bearer bb3e1343a51f3bd53340b17ddde2a4df6c19192212173f51b0e7312a6b0289ab1fbdd9da9c6c16de4bac74418048152eb6a7ade5ff8ef6987e412e449efda5e20e365218dee516e8e797b77c45f7ba9c97892f5c27c3e74cfe3633b182621d4cf5f805f8ddb139f2ebe1b48e320340d5f52dc56c58b165bc37d2cdf2719dfa0b`;
 
@@ -23,6 +24,19 @@ const addQueryParam = (url, paramName, paramValue) => {
 export const getHomePage = async (locale = "en") => {
   try {
     const url = addQueryParam(HOME_PAGE_URL, "locale", locale);
+    const response = await apiService.get(url, null, {
+      next: { revalidate: 5000 },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching home page data:", error);
+    throw error;
+  }
+};
+
+export const getCcontactUsPage = async (locale = "en") => {
+  try {
+    const url = addQueryParam(CONTACT_US_URL, "locale", locale);
     const response = await apiService.get(url, null, {
       next: { revalidate: 5000 },
     });

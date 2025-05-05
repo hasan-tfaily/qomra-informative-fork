@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useMemo, useState } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
+import { environment } from "@/core/environmetKey";
 
 function Map({ address }) {
   const [mapLoaded, setMapLoaded] = useState(false);
@@ -12,7 +13,7 @@ function Map({ address }) {
     const loadMap = async () => {
       try {
         const loader = new Loader({
-          apiKey: `AIzaSyAVbv4oj4cC2wxrri5YZLMjOKjvq2X_3qo`,
+          apiKey: environment.location.apiKey,
           version: "weekly",
           libraries: ["places"], // Add any additional libraries
         });
@@ -40,7 +41,12 @@ function Map({ address }) {
         if (status === "OK" && results?.[0]) {
           const map = new window.google.maps.Map(mapRef.current, {
             center: results[0].geometry.location,
-            zoom: 15,
+            zoom: 16,
+            draggable: false,
+            zoomControl: false,
+            scrollwheel: false,
+            disableDoubleClickZoom: true,
+            gestureHandling: "none",
           });
 
           new window.google.maps.Marker({
