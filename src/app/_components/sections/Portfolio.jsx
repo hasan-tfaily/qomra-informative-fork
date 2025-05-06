@@ -145,7 +145,7 @@ const PortfolioSection = ({
               )}
               <div className="mil-project-btn-frame mil-up">
                 <Link
-                  href={Data.button.link}
+                  href={"/service"}
                   className={
                     btnBorder
                       ? "mil-btn mil-btn-border mil-c-gone"

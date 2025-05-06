@@ -46,7 +46,7 @@
           },
           {
             "label": "Services",
-            "link": "/home-9"
+            "link": "/service"
           },
           {
             "label": "Event and Workshop",
@@ -90,7 +90,7 @@
       },
       {
         "label": "Services",
-        "link": "/services"
+        "link": "/service"
       },
       {
         "label": "Projects",

@@ -45,7 +45,7 @@ async function Home1() {
           alt: HomePage.data.coverImage.alternativeText,
         }}
         title={HomePage.data.title}
-        button={{ label: "See Projects", link: "/projects-2" }}
+        button={{ label: "Book Now", link: "/booking" }}
         imgLayout={"out-right"}
       />
       <ExperienceSection data={HomePage.data.featuredSection} />

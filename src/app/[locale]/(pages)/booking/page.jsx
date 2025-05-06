@@ -6,9 +6,7 @@ import OkaiLayout from "@/src/app/_layouts/OkaiLayout";
 
 import PageBanner from "@/src/app/_components/PageBanner";
 import ContactFormSection from "@/src/app/_components/sections/Contact";
-import dynamic from "next/dynamic";
 import Calendly from "@/src/app/_components/calendly";
-import Map from "@/src/app/_components/maps/map";
 
 export const metadata = {
   title: {
