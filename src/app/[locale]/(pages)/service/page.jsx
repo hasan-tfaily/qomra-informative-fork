@@ -34,7 +34,6 @@ async function Home9() {
   const services = await getServicesPage();
 
   const service = await getServices();
-
   return (
     <OkaiLayout>
       <HeroThreeSection
@@ -52,7 +51,7 @@ async function Home9() {
         subtitle={services.data.QomraCreation.title}
         title={services.data.QomraCreation.subtitle}
         description={""}
-        button={{ label: "Continue", link: "/about" }}
+        button={{ label: "Book Now", link: "/booking" }}
         image={`http://137.184.197.76:1337${services.data.QomraCreation.image.url}`}
         paddingTop={30}
         paddingBottom={120}

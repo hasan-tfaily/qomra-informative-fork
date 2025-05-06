@@ -96,7 +96,7 @@ async function ProjectDetail({ params }) {
                 data-value-2="1.25"
               />
             </div>
-            <div
+            {/* <div
               className={`mil-just-image mil-h mil-shortened mil-mb${
                 1 + 1 == 2 ? "120" : "30"
               } mil-up`}
@@ -111,7 +111,7 @@ async function ProjectDetail({ params }) {
                 data-value-1="1"
                 data-value-2="1.25"
               />
-            </div>
+            </div> */}
           </>
 
           <div className="row mil-jcb">
