@@ -70,7 +70,7 @@ async function AboutPage() {
         paddingTop={0}
         paddingBottom={120}
       />
-      <CallToActionSection data={aboutUs.data.divider} />
+      <CallToActionSection data={aboutUs.data.divider} href={"/booking"} />
 
       <CallToActionThreeSection data={aboutUs.data.divider2} />
     </OkaiLayout>

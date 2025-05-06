@@ -21,14 +21,14 @@ const AboutUsTwoSection = ({ data }) => {
                   {" "}
                   {data.description}
                 </p>
-                <div className="mil-up">
+                {/* <div className="mil-up">
                   <Link
                     href={Data.button.link}
                     className="mil-btn mil-btn-border mil-c-gone"
                   >
                     {Data.button.label}
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="col-lg-7 mil-about-image-frame">
