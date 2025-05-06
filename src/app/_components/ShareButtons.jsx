@@ -12,7 +12,6 @@ const ShareButtons = () => {
       icon: "fab fa-instagram",
       title: "Instagram",
     },
-
     {
       link: "https://www.youtube.com/@QomraStudios",
       icon: "fab fa-youtube",

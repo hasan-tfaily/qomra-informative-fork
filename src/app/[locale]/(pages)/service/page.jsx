@@ -43,7 +43,7 @@ async function Home9() {
         }}
         title={services.data.servicesHeaderSection.title}
         subtitle={services.data.servicesHeaderSection.headline}
-        button={{ label: "View portfolio", link: "/projects-3" }}
+        button={{ label: "View portfolio", link: "/showcase" }}
         button2={{ label: "Contact me", link: "/contact" }}
       />
       <ExperienceFiveSection data={services.data.servicesHeaderSection} />
