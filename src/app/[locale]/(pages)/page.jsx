@@ -56,7 +56,7 @@ async function Home1() {
           order={["project-1", "project-3", "project-2", "project-4"]}
         />
       </Suspense>
-      <CallToActionSection data={HomePage.data.divider} />
+      <CallToActionSection data={HomePage.data.divider} href={"/contact"} />
       <TestimonialSlider data={HomePage.data.testemonial} items={[]} />
 
       <CallToActionTwoSection data={HomePage.data.contactUsSection} />

@@ -1,7 +1,7 @@
 import Data from "@data/sections/call-to-action.json";
 import Link from "next/link";
 
-const CallToActionSection = ({ data = {} }) => {
+const CallToActionSection = ({ data = {}, href }) => {
   return (
     <>
       {/* call to action */}
@@ -18,7 +18,7 @@ const CallToActionSection = ({ data = {} }) => {
               </div>
               <div className="col-lg-4 mil-jce mil-992-jcs mil-up">
                 <Link
-                  href={data?.button?.link ?? Data.button.link}
+                  href={href ?? data?.button?.link ?? Data.button.link ?? "/"}
                   className="mil-btn mil-btn-soft mil-mb30 mil-c-gone"
                 >
                   {data?.button?.label ?? Data.button.label}
@@ -32,5 +32,4 @@ const CallToActionSection = ({ data = {} }) => {
     </>
   );
 };
-
 export default CallToActionSection;

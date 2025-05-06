@@ -1,6 +1,7 @@
 "use client";
 
 import { SliderProps } from "@/src/app/_common/sliderProps";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const TestimonialSlider = ({
@@ -34,7 +35,9 @@ const TestimonialSlider = ({
                       data-swiper-parallax-opacity="0"
                     >
                       <div className="mil-user mil-mb60 mil-up">
-                        <img
+                        <Image
+                          width={50}
+                          height={50}
                           src={`http://137.184.197.76:1337${item.image.url}`}
                           alt={item.name}
                         />
