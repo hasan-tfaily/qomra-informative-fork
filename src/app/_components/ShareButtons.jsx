@@ -12,11 +12,7 @@ const ShareButtons = () => {
       icon: "fab fa-instagram",
       title: "Instagram",
     },
-    {
-      link: "https://www.tiktok.com/@qomra.studios",
-      icon: "fab fa-tiktok",
-      title: "TikTok",
-    },
+
     {
       link: "https://www.youtube.com/@QomraStudios",
       icon: "fab fa-youtube",
