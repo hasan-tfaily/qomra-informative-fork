@@ -1,5 +1,4 @@
 const ProductRelated = ({ items, photos }) => {
-  console.log(photos);
   return (
     <>
       <div className="mil-p-0-60">

@@ -7,6 +7,7 @@ import OkaiLayout from "@/src/app/_layouts/OkaiLayout";
 import PageBanner from "@/src/app/_components/PageBanner";
 import ContactFormSection from "@/src/app/_components/sections/Contact";
 import Calendly from "@/src/app/_components/calendly";
+import { getBookingPage } from "@/core/repository";
 
 export const metadata = {
   title: {
@@ -15,13 +16,15 @@ export const metadata = {
   description: AppData.settings.siteDescription,
 };
 
-const ContactPage = () => {
+const ContactPage = async () => {
+  const data = await getBookingPage();
+
   return (
     <OkaiLayout>
       <PageBanner
-        pageTitle={"Booking"}
+        pageTitle={data.data.title}
         breadTitle={"booking"}
-        bgImage={"/img/banners/17.jpg"}
+        bgImage={`http://137.184.197.76:1337${data.data.coverImage.url}`}
       />
       <ContactFormSection />
       <div className="center ">
@@ -31,7 +34,7 @@ const ContactPage = () => {
             padding: "2rem 0" /* Adjust the values as needed */,
           }}
         >
-          Schedule a Meeting
+          {data.data.description}
         </h1>
         <Calendly />
       </div>
