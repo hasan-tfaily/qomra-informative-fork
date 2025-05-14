@@ -52,7 +52,7 @@ async function Home3() {
         }}
         title={`${events.data.title} `}
         description={events.data.description}
-        button={{ label: "View portfolio", link: "/projects-3" }}
+        button={{ label: "View portfolio", link: "/showcase" }}
         imgLayout={"out-right"}
       />
 
