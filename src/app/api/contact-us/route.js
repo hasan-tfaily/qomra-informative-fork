@@ -1,10 +1,10 @@
 export const POST = async (request) => {
-  const token = `Bearer 7db2d45ad9f6a6848f777295af9e4dffd377c598ef569e48c9c1f0a28e9ee749f034039a98c4dd41533ab5ec17235b2fcb41705d4accf271a49fb4bf3773d0851ea41951d2523cb6509b66cbc84d0ad4d15633926e37eb645d70c23aeb9f3e20c3b3845078610fe7fcf089e3d9e9c5a190a2a594f9848c716843e4f269b58add`;
+  const token = `Bearer bb3e1343a51f3bd53340b17ddde2a4df6c19192212173f51b0e7312a6b0289ab1fbdd9da9c6c16de4bac74418048152eb6a7ade5ff8ef6987e412e449efda5e20e365218dee516e8e797b77c45f7ba9c97892f5c27c3e74cfe3633b182621d4cf5f805f8ddb139f2ebe1b48e320340d5f52dc56c58b165bc37d2cdf2719dfa0b`;
 
   try {
     const data = await request.json();
     const response = await fetch(
-      "http://165.227.100.193/api/contact-us-forms",
+      "http://137.184.197.76:1337/api/contact-us-forms",
       {
         method: "POST",
         headers: {
