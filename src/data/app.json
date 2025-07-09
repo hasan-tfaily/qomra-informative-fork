@@ -18,23 +18,11 @@
     "menu": [
       {
         "label": "Home",
-        "link": "/",
-        "children": [
-          {
-            "label": "Home",
-            "link": "/"
-          }
-        ]
+        "link": "/"
       },
       {
         "label": "Portfolio",
-        "link": "/projects",
-        "children": [
-          {
-            "label": "Slider",
-            "link": "/showcase"
-          }
-        ]
+        "link": "/projects"
       },
       {
         "label": "Pages",
@@ -68,13 +56,7 @@
       },
       {
         "label": "Blog",
-        "link": "/blog",
-        "children": [
-          {
-            "label": "Blogs",
-            "link": "/blog"
-          }
-        ]
+        "link": "/blog"
       }
     ]
   },
