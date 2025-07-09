@@ -64,7 +64,7 @@ bring their boldest ideas to life.`;
               </ul>
             </div>
             <div className="col-lg-2 mil-mb90">
-              <h5 className="mil-fs16 mil-mb60 mil-up">
+              <h5 className="mil-fs15 mil-mb30 mil-up">
                 {AppData.footer.menuTitle}
               </h5>
               <ul className="mil-footer-menu">
@@ -78,7 +78,7 @@ bring their boldest ideas to life.`;
               </ul>
             </div>
             <div className="col-lg-4 mil-mb90">
-              <h5 className="mil-fs16 mil-mb60 mil-up">
+              <h5 className="mil-fs16 mil-mb30 mil-up">
                 {AppData.footer.contactTitle}
               </h5>
               <ul className="mil-footer-list">
