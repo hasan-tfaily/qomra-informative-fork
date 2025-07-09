@@ -12,7 +12,8 @@ const ExperienceSection = ({ data }) => {
               <div className="mil-exp-box mil-up">
                 <div className="mil-exp-content mil-up">
                   <div
-                    className="mil-exp-number "
+                    className="mil-exp-number mil-fs42 mil-responsive-text"
+                    style={{}}
                     dangerouslySetInnerHTML={{ __html: data.title }}
                   />
                   {/* <h2
@@ -24,7 +25,7 @@ const ExperienceSection = ({ data }) => {
             </div>
             <div className="col-lg-5 mil-p-120-0">
               <p
-                className="mil-text mil-fs30 mil-light mil-mb90 mil-up"
+                className="mil-text mil-fs30 mil-fs-sm-24 mil-fs-xs-18 mil-light mil-mb90 mil-up"
                 dangerouslySetInnerHTML={{ __html: data.description }}
               />
               {data.featuredSection.map((item, key) => {
@@ -41,7 +42,7 @@ const ExperienceSection = ({ data }) => {
                     }
                     key={`experience-item-${key}`}
                   >
-                    <h5 className="mil-fs20 mil-mb30 mil-up">
+                    <h5 className="mil-fs20 mil-fs-sm-18 mil-fs-xs-16 mil-mb30 mil-up">
                       {shortenedTitle}{" "}
                       <Link href={lastWord} className="mil-text-link">
                         {lastWord}

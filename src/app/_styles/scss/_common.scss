@@ -254,7 +254,15 @@ h6 {
     font-size: 48px;
   }
 }
+.mil-responsive-text {
+  @media (max-width: 480px) {
+    font-size: 42px !important;
+  }
 
+  @media (max-width: 360px) {
+    font-size: 42px !important;
+  }
+}
 .mil-light {
   color: variables.$l1;
 }
@@ -352,7 +360,8 @@ cursor
   user-select: none;
   pointer-events: none;
   z-index: 9999999;
-  transition: transform 0.4s cubic-bezier(0.75, -1, 0.3, 2.33),
+  transition:
+    transform 0.4s cubic-bezier(0.75, -1, 0.3, 2.33),
     background-color variables.$tmd;
 
   &:after {

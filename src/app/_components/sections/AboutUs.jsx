@@ -22,7 +22,7 @@ const AboutUsSection = ({
             <div className="col-lg-5 mil-relative">
               <div className="mil-about-text">
                 <span
-                  className="mil-suptitle mil-accent mil-mb30 mil-up"
+                  className="mil-suptitle mil-accent mil-mb15 mil-up"
                   dangerouslySetInnerHTML={{
                     __html: subtitle ? subtitle : data.subtitle,
                   }}

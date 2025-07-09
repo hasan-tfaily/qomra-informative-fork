@@ -40,7 +40,7 @@ const PortfolioSlider = ({
           <div className="row mil-jcc">
             <div className="col-12 mil-mb90">
               <span
-                className="mil-suptitle mil-accent mil-mb30 mil-up"
+                className="mil-suptitle mil-accent mil-mb15  mil-up"
                 dangerouslySetInnerHTML={{ __html: title }}
               />
               <h2
