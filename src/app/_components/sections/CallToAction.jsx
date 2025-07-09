@@ -20,6 +20,11 @@ const CallToActionSection = ({ data = {}, href }) => {
                 <Link
                   href={href ?? data?.button?.link ?? Data.button.link ?? "/"}
                   className="mil-btn mil-btn-soft mil-mb30 mil-c-gone"
+                  style={{
+                    backgroundColor: "#000000",
+                    color: "#ffffff",
+                    borderColor: "#000000",
+                  }}
                 >
                   {data?.button?.label ?? Data.button.label}
                 </Link>

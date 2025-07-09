@@ -23,11 +23,8 @@ const CallToActionTwoSection = ({ darkUI = false, data }) => {
             {title}{" "}
             <Link
               href={Data.line1.link}
-              className={
-                darkUI
-                  ? "mil-text-link mil-accent mil-c-gone"
-                  : "mil-text-link mil-accent-soft mil-c-gone"
-              }
+              className="mil-text-link mil-c-gone"
+              style={{ color: "black" }}
             >
               {differentColorWord}
             </Link>

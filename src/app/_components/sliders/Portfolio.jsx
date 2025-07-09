@@ -72,14 +72,6 @@ const PortfolioSlider = ({
                             data-value-2="1.25"
                           />
                         </div>
-                        <div className="mil-hover-overlay">
-                          <Link
-                            href={`/projects/${item.id}`}
-                            className="mil-addition-btn mil-c-gone"
-                          >
-                            View
-                          </Link>
-                        </div>
                       </div>
                     </div>
                   </SwiperSlide>

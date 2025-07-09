@@ -35,7 +35,7 @@ const ServicesFourSection = ({
           >
             <div className="col-lg-5">
               {heading == 1 && (
-                <h2 className="mil-fs42 mil-mb90 mil-up">{content.title}</h2>
+                <h2 className="mil-fs42 mil-mb30 mil-up">{content.title}</h2>
               )}
               <div className="mil-accordion mil-mb90">
                 {isAboutUs ? (
