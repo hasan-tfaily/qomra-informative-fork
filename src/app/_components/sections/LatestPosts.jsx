@@ -17,7 +17,7 @@ const LatestPostsSection = ({
         <div className="container">
           <div className="row">
             <div className="col-12 mil-mb90">
-              <span className="mil-suptitle mil-accent mil-mb30 mil-up">
+              <span className="mil-suptitle mil-accent mil-mb15 mil-up">
                 {Data.subtitle}
               </span>
               <h2 className="mil-fs42 mil-up">{Data.title}</h2>
