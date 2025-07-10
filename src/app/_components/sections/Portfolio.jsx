@@ -33,7 +33,7 @@ const PortfolioSection = ({
           <div className="row">
             <div className="col-12 mil-mb60">
               <span
-                className="mil-suptitle mil-accent mil-mb30 mil-up"
+                className="mil-suptitle mil-accent mil-mb15 mil-up"
                 dangerouslySetInnerHTML={{
                   __html: data.title,
                 }}

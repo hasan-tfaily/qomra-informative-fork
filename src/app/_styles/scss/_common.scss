@@ -247,11 +247,19 @@ h6 {
   font-size: 30px;
 
   @media (max-width: 992px) {
-    font-size: 58px;
+    font-size: 26px;
   }
 
   @media (max-width: 768px) {
-    font-size: 48px;
+    font-size: 22px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 16px;
   }
 }
 .mil-responsive-text {
@@ -261,6 +269,42 @@ h6 {
 
   @media (max-width: 360px) {
     font-size: 42px !important;
+  }
+}
+
+.mil-pricing-section {
+  @media (max-width: 768px) {
+    .mil-switcher {
+      width: 200px;
+
+      &:after {
+        right: -60px;
+        font-size: 11px;
+        padding: 8px 12px;
+      }
+
+      & span {
+        width: 100px;
+        height: 50px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .mil-switcher {
+      width: 180px;
+
+      &:after {
+        display: none;
+      }
+
+      & span {
+        width: 90px;
+        height: 45px;
+        font-size: 11px;
+      }
+    }
   }
 }
 .mil-light {

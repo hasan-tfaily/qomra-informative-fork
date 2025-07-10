@@ -1984,6 +1984,36 @@ price
       color: variables.$d1;
     }
   }
+
+  @media (max-width: 768px) {
+    width: 200px;
+
+    &:after {
+      right: -60px;
+      font-size: 11px;
+      padding: 8px 12px;
+    }
+
+    & span {
+      width: 100px;
+      height: 50px;
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 180px;
+
+    &:after {
+      display: none;
+    }
+
+    & span {
+      width: 90px;
+      height: 45px;
+      font-size: 11px;
+    }
+  }
 }
 
 .mil-price-card {
@@ -2011,6 +2041,14 @@ price
         margin-bottom: 0;
       }
     }
+  }
+
+  @media (max-width: 768px) {
+    padding: 40px 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 30px 15px;
   }
 }
 

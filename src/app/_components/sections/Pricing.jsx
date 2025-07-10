@@ -54,6 +54,7 @@ const PricingSection = ({ subtitle = "", title = "", data }) => {
                       className="mil-pricing-table-price pricingSpecial"
                       data-year-price={item.price}
                       data-month-price={item.price}
+                      style={{ wordBreak: "break-word", lineHeight: "1.2" }}
                     >
                       {item.price}
                     </span>
