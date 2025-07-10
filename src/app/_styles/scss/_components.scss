@@ -2005,7 +2005,10 @@ price
     width: 180px;
 
     &:after {
-      display: none;
+      right: -50px;
+      font-size: 10px;
+      padding: 6px 10px;
+      top: -20px;
     }
 
     & span {
