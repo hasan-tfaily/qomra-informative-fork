@@ -10,7 +10,7 @@ const generateHeader = (userHeader = {}) => {
 };
 
 const generatePath = (path = "") => {
-  return `http://137.184.197.76:1337${path}`;
+  return `http://91.98.36.223${path}`;
 };
 
 export const get = (path, params, header = {}) => {

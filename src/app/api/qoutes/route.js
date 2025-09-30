@@ -3,7 +3,7 @@ export const POST = async (request) => {
 
   try {
     const data = await request.json();
-    const response = await fetch("http://165.227.100.193/api/qoutes", {
+    const response = await fetch("http://91.98.36.223/api/qoutes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

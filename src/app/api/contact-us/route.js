@@ -3,17 +3,14 @@ export const POST = async (request) => {
 
   try {
     const data = await request.json();
-    const response = await fetch(
-      "http://137.184.197.76:1337/api/contact-us-forms",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: token,
-        },
-        body: JSON.stringify(data),
-      }
-    );
+    const response = await fetch("http://91.98.36.223/api/contact-us-forms", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: token,
+      },
+      body: JSON.stringify(data),
+    });
 
     const responseData = await response.json();
     return new Response(JSON.stringify(responseData), {

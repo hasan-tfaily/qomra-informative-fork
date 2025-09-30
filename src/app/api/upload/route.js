@@ -3,7 +3,7 @@ export const POST = async (request) => {
 
   try {
     const formData = await request.formData();
-    const response = await fetch("http://165.227.100.193/api/upload", {
+    const response = await fetch("http://91.98.36.223/api/upload", {
       method: "POST",
       headers: { Authorization: token },
       body: formData,
