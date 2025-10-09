@@ -41,7 +41,7 @@ async function Home1() {
     <OkaiLayout>
       <HeroSection
         image={{
-          url: `http://137.184.197.76:1337${HomePage.data.coverImage.url}`,
+          url: `http://91.98.36.223${HomePage.data.coverImage.url}`,
           alt: HomePage.data.coverImage.alternativeText,
         }}
         title={HomePage.data.title}

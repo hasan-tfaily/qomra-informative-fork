@@ -12,7 +12,7 @@ const ServicesTwoSection = ({ paddingTop = 120, paddingBottom = 90, data }) => {
               <div className="col-md-4" key={`services2-item-${key}`}>
                 <div className="mil-iconbox mil-mb30">
                   <Image
-                    src={`http://137.184.197.76:1337${item.image.url}`}
+                    src={`http://91.98.36.223${item.image.url}`}
                     height={100}
                     width={100}
                     alt="icon"

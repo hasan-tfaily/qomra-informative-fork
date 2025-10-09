@@ -6,10 +6,7 @@ const ProductRelated = ({ items, photos }) => {
         <div className="mil-instagram mil-up">
           {photos.map((item, key) => (
             <div className="mil-insta" key={`instagram-gallery-item-${key}`}>
-              <img
-                src={`http://137.184.197.76:1337${item.url}`}
-                alt={item.alt}
-              />
+              <img src={`http://91.98.36.223${item.url}`} alt={item.alt} />
             </div>
           ))}
         </div>

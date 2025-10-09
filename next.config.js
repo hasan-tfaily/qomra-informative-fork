@@ -7,7 +7,7 @@ const nextConfig = {
     silenceDeprecations: ["legacy-js-api"],
   },
   images: {
-    domains: ["137.184.197.76"], // Add your hostname here
+    domains: ["91.98.36.223"], // Add your hostname here
   },
 };
 

@@ -120,7 +120,7 @@ async function PostsDetail({ params }) {
             <div className="col-12">
               <div className="mil-just-image mil-h mil-shortened mil-mb90 mil-up">
                 <Image
-                  src={`http://137.184.197.76:1337${blog.data[0].coverImage.url}`}
+                  src={`http://91.98.36.223${blog.data[0].coverImage.url}`}
                   fill
                   sizes="100vw"
                   priority

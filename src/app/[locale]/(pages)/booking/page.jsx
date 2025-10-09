@@ -24,7 +24,7 @@ const ContactPage = async () => {
       <PageBanner
         pageTitle={data.data.title}
         breadTitle={"booking"}
-        bgImage={`http://137.184.197.76:1337${data.data.coverImage.url}`}
+        bgImage={`http://91.98.36.223${data.data.coverImage.url}`}
       />
       <ContactFormSection />
       <div className="center ">

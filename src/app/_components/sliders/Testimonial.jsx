@@ -38,7 +38,7 @@ const TestimonialSlider = ({
                         <Image
                           width={50}
                           height={50}
-                          src={`http://137.184.197.76:1337${item.image.url}`}
+                          src={`http://91.98.36.223${item.image.url}`}
                           alt={item.name}
                         />
                       </div>

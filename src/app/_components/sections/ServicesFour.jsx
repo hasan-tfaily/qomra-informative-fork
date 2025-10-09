@@ -79,9 +79,7 @@ const ServicesFourSection = ({
             <div className="col-lg-6">
               <div className="mil-just-image mil-s mil-mb90 mil-up">
                 <Image
-                  src={
-                    image || `http://137.184.197.76:1337${content.image.url}`
-                  }
+                  src={image || `http://91.98.36.223${content.image.url}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   alt={content.image?.alternativeText || ""}

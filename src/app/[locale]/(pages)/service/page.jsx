@@ -38,7 +38,7 @@ async function Home9() {
     <OkaiLayout>
       <HeroThreeSection
         image={{
-          url: `http://137.184.197.76:1337${services.data.servicesHeaderSection.image.url}`,
+          url: `http://91.98.36.223${services.data.servicesHeaderSection.image.url}`,
           alt: "banner",
         }}
         title={services.data.servicesHeaderSection.title}
@@ -52,7 +52,7 @@ async function Home9() {
         title={services.data.QomraCreation.subtitle}
         description={""}
         button={{ label: "Book Now", link: "/booking" }}
-        image={`http://137.184.197.76:1337${services.data.QomraCreation.image.url}`}
+        image={`http://91.98.36.223${services.data.QomraCreation.image.url}`}
         paddingTop={30}
         paddingBottom={120}
       />

@@ -65,7 +65,7 @@ const PortfolioSection = ({
                   <div className="mil-cover-frame mil-v">
                     <div className="mil-hover-frame">
                       <Image
-                        src={`http://137.184.197.76:1337${data.images[0].url}`}
+                        src={`http://91.98.36.223${data.images[0].url}`}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
                         alt={projectsKeys[order[0]].title}
@@ -86,7 +86,7 @@ const PortfolioSection = ({
                   <div className="mil-cover-frame mil-s">
                     <div className="mil-hover-frame">
                       <Image
-                        src={`http://137.184.197.76:1337${data.images[1].url}`}
+                        src={`http://91.98.36.223${data.images[1].url}`}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
                         alt={projectsKeys[order[1]].title}
@@ -109,7 +109,7 @@ const PortfolioSection = ({
                   <div className="mil-cover-frame mil-h">
                     <div className="mil-hover-frame">
                       <Image
-                        src={`http://137.184.197.76:1337${data.images[2].url}`}
+                        src={`http://91.98.36.223${data.images[2].url}`}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
                         alt={projectsKeys[order[2]].title}
@@ -130,7 +130,7 @@ const PortfolioSection = ({
                   <div className="mil-cover-frame mil-v">
                     <div className="mil-hover-frame">
                       <Image
-                        src={`http://137.184.197.76:1337${data.images[3].url}`}
+                        src={`http://91.98.36.223${data.images[3].url}`}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
                         alt={projectsKeys[order[3]].title}

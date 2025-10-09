@@ -30,7 +30,7 @@ async function PricingPage() {
       <PageBanner
         pageTitle={"Our pricing"}
         breadTitle={"Pricing"}
-        bgImage={`http://137.184.197.76:1337${price.data.image.url}`}
+        bgImage={`http://91.98.36.223${price.data.image.url}`}
       />
       <PricingSection
         subtitle={price.data.description}

@@ -35,7 +35,7 @@ async function AboutPage() {
       <PageBanner
         pageTitle={"About us"}
         breadTitle={"About us"}
-        bgImage={`http://137.184.197.76:1337${aboutUs.data.aboutUsHeader.coverImage.url}`}
+        bgImage={`http://91.98.36.223${aboutUs.data.aboutUsHeader.coverImage.url}`}
       />
       <ExperienceEightSection data={aboutUs.data.aboutUsHeader} />
       <AboutUsTwoSection data={aboutUs.data.mission} />

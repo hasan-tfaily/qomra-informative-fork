@@ -87,7 +87,7 @@ async function ProjectDetail({ params }) {
               key={`project-gallery-item-${0}`}
             >
               <Image
-                src={`http://137.184.197.76:1337${services.data[0].coverImage.url}`}
+                src={`http://91.98.36.223${services.data[0].coverImage.url}`}
                 fill
                 sizes="100vw"
                 alt={"hello"}
@@ -103,7 +103,7 @@ async function ProjectDetail({ params }) {
               key={`project-gallery-item-${1}`}
             >
               <Image
-                src={`http://137.184.197.76:1337${services.data[0].aboutService[0].image.url}`}
+                src={`http://91.98.36.223${services.data[0].aboutService[0].image.url}`}
                 fill
                 sizes="100vw"
                 alt={"hello"}
@@ -143,7 +143,7 @@ async function ProjectDetail({ params }) {
                 <div className="col-lg-7 mil-project-cover-frame">
                   <div className="mil-cover-img mil-left mil-up">
                     <Image
-                      src={`http://137.184.197.76:1337${services.data[0].ourServicce.image.url}`}
+                      src={`http://91.98.36.223${services.data[0].ourServicce.image.url}`}
                       fill
                       sizes="(max-width: 768px) 100vw, 50vw"
                       alt={"Qomra"}

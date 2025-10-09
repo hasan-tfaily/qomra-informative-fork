@@ -49,7 +49,7 @@ const ShowcasePortfolioSlider = ({
                   data-swiper-parallax-opacity="0"
                 >
                   <Image
-                    src={`http://137.184.197.76:1337${item.image.url}`}
+                    src={`http://91.98.36.223${item.image.url}`}
                     fill
                     sizes="(max-width: 768px) 100vw, 75vw"
                     alt={item.title}

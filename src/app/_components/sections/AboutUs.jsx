@@ -56,11 +56,7 @@ const AboutUsSection = ({
             <div className="col-lg-7 mil-about-image-frame">
               <div className="mil-about-img mil-out-right mil-up">
                 <Image
-                  src={
-                    image
-                      ? image
-                      : `http://137.184.197.76:1337${data.image.url}`
-                  }
+                  src={image ? image : `http://91.98.36.223${data.image.url}`}
                   fill
                   sizes="(max-width: 768px) 100vw, 75vw"
                   alt={Data.image.alt}

@@ -27,7 +27,7 @@ async function ContactPage() {
       <PageBanner
         pageTitle={"Contact us"}
         breadTitle={"Contact"}
-        bgImage={`http://137.184.197.76:1337${data.data.coverImage.url}`}
+        bgImage={`http://91.98.36.223${data.data.coverImage.url}`}
       />
       <ContactFormSection />
       <Map address="Qomra Studios, Beirut, Lebanon" />

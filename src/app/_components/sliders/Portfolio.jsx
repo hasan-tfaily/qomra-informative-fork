@@ -63,7 +63,7 @@ const PortfolioSlider = ({
                       <div className="mil-cover-frame mil-h">
                         <div className="mil-hover-frame">
                           <Image
-                            src={`http://137.184.197.76:1337${item.url}`}
+                            src={`http://91.98.36.223${item.url}`}
                             fill
                             sizes="(max-width: 768px) 100vw, 50vw"
                             alt={item.alternativeText ?? "image"}
